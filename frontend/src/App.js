@@ -5,6 +5,7 @@ import React from 'react';
 import Home from './components/Home';
 import Login from './components/Login';
 import LocationSearch from './components/LocationSearch';
+import Nav from './components/Nav';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          
+
           <Route path="/"/>
 
           <Route path="/home">
