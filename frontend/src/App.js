@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import React from 'react';
 import Home from './components/Home';
 import Login from './components/Login';
-import LocationSearch from './components/LocationSearch';
+import LocationSearch from './components/LocationSearchForm';
 import Nav from './components/Nav';
 
 function App() {
