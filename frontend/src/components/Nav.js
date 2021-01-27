@@ -11,11 +11,11 @@ return (
                 <Link to="/home" className="nav-text">Home</Link>
             </li>
             <li>
-                <Link to="/login" className="nav-text">Login</Link>
+                <Link to="/locationsearch" className="nav-text">Location Search</Link>
             </li>
             <li>
-                <Link to="/locationsearch" className="nav-text">Location Search</Link>
-            </li> 
+                <Link to="/login" className="nav-text">Login</Link>
+            </li>
         </ul>
     </nav>
 );
