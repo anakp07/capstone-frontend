@@ -11,21 +11,21 @@ const LocationSearchForm = () => {
   })
   return (
     <div>
-    <input 
-    placeholder="country"
-    type="text"
-    name="country"
-    value={formFields.country}/>
-    <input 
-    placeholder="state"
-    type="text"
-    name="state"
-    value={formFields.state}/>
-    <input 
-    placeholder="city"
-    type="text"
-    name="city"
-    value={formFields.city}/>
+      <input 
+      placeholder="country"
+      type="text"
+      name="country"
+      value={formFields.country}/>
+      <input 
+      placeholder="state"
+      type="text"
+      name="state"
+      value={formFields.state}/>
+      <input 
+      placeholder="city"
+      type="text"
+      name="city"
+      value={formFields.city}/>
     </div>
     
   )
