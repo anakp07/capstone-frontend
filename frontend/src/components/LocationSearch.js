@@ -5,9 +5,7 @@ const LocationSearch = () => {
     return(
       <div>
         <LocationSearchForm /> 
-      </div>
-        
-        
+      </div>   
     )
 };
 
