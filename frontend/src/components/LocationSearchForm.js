@@ -1,38 +1,34 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import './LocationSearchForm.css';
 
-const SearchForm = (props) => {
+const LocationSearchForm = () => {
+  const [formFields, setFormFields] = useState({
+    country: '',
+    state: '',
+    city: '',
+  })
+  return (
+    <div>
+    <input 
+    placeholder="country"
+    type="text"
+    name="country"
+    value={formFields.country}/>
+    <input 
+    placeholder="state"
+    type="text"
+    name="state"
+    value={formFields.state}/>
+    <input 
+    placeholder="city"
+    type="text"
+    name="city"
+    value={formFields.city}/>
+    </div>
     
-    const [title, setTitle] = useState('');
-    
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-        if (title !== '') {
-            props.onSubmitCallback(title);
-            setTitle('');
-        }
-    }
-    const onTitleChange = (event) => {
-        setTitle(event.target.value)
-    }
-    
-    return (
-        <form
-        id="search-form"
-        onSubmit={onFormSubmit}>
-        <label htmlFor="text"></label>
-        <input
-            name="text"
-            onChange={onTitleChange}
-        />
-        <input type="submit"
-        value="Search"
-        />
-        </form>
-        );
-    }
-SearchForm.propTypes = {
-    onSubmitCallback: PropTypes.func.isRequired,
-};
-export default SearchForm;
+  )
+}
+
+export default LocationSearchForm;
