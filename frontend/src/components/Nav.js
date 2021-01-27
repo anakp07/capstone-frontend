@@ -6,15 +6,15 @@ const Nav = () => {
 return (
     <nav>
     <h3>Instagrammable Spots</h3>
-        <ul>
+        <ul className="nav-links">
         <Link to="/home">
-            <li>Home</li>
+            <li className="nav-text">Home</li>
         </Link>
         <Link to="/login">
-            <li>Login</li>
+            <li className="nav-text">Login</li>
         </Link>
         <Link to="/LocationSearch">
-            <li>Location Search</li>
+            <li className="nav-text">Location Search</li>
         </Link>
         </ul>
     </nav>
