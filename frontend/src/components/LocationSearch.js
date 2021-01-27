@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LocationSearchForm';
+import LocationSearchForm from './LocationSearchForm';
 
 const LocationSearch = () => {
     return(
