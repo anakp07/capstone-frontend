@@ -7,15 +7,15 @@ return (
     <nav>
     <h3>Instagrammable Spots</h3>
         <ul className="nav-links">
-        <Link to="/home">
-            <li className="nav-text">Home</li>
-        </Link>
-        <Link to="/login">
-            <li className="nav-text">Login</li>
-        </Link>
-        <Link to="/LocationSearch">
-            <li className="nav-text">Location Search</li>
-        </Link>
+            <li className="nav-text">
+                <Link to="/home">Home</Link>
+            </li>
+            <li className="nav-text">
+                <Link to="/login">Login</Link>
+            </li>
+            <li className="nav-text">
+                <Link to="/locationsearch">Location Search</Link>
+            </li> 
         </ul>
     </nav>
 );
