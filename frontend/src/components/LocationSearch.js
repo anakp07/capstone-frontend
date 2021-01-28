@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import LocationSearchForm from './LocationSearchForm';
 
-const LocationSearch = () => {
+const LocationSearch = (props) => {
     return(
       <div>
-        <LocationSearchForm /> 
+        <LocationSearchForm formFields={props.formFields} setFormFields={props.setFormFields}/> 
       </div>   
     )
 };
