@@ -14,7 +14,7 @@ function App() {
     city: '',
   })
 
-  const [locationIsSubmitted, setLocation] = useState(false)
+  // const [locationIsSubmitted, setLocation] = useState(false)
 
   return (
     <div>
@@ -24,10 +24,11 @@ function App() {
         <Switch>
           <Route exact path="/"/>
           <Route path="/home"><Home/></Route>
-          <Route path="/locationsearch"><LocationSearch locationIsSubtmitted={locationIsSubmitted} formFields={formFields} setFormFields={setFormFields}/></Route>
+          <Route path="/locationsearch"><LocationSearch formFields={formFields} setFormFields={setFormFields}/></Route>
+          {/* <Route path="/locationsearch"><LocationSearch locationIsSubtmitted={locationIsSubmitted} setLocation={setLocation} formFields={formFields} setFormFields={setFormFields}/></Route> */}
           <Route path="/login"><Login/></Route>
         </Switch>
-        {locationIsSubmitted || Results for: {formFields.city}, {formFields.state}, {formFields.country}}
+        {/* {locationIsSubmitted && {formFields.country}} */}
       </div>
     </Router>
     You have selected {formFields.city}, {formFields.state}, {formFields.country}.

@@ -5,6 +5,8 @@ const LocationSearch = (props) => {
     return(
       <div>
         <LocationSearchForm formFields={props.formFields} setFormFields={props.setFormFields}/> 
+        {/* <LocationSearchForm isLocationSubmitted={props.isLocationSubmitted} setLocation={props.setLocation} formFields={props.formFields} setFormFields={props.setFormFields}/>  */}
+
       </div>   
     )
 };
