@@ -9,7 +9,7 @@ import Nav from './components/Nav';
 
 function App() {
   const [formFields, setFormFields] = useState({
-    country: 'original country not selected',
+    country: '',
     state: '',
     city: '',
   })
@@ -27,7 +27,8 @@ function App() {
         </Switch>
       </div>
     </Router>
-    {formFields.country}
+    You have selected {formFields.city}, {formFields.state}, {formFields.country}.
+
     </div>
     
   );

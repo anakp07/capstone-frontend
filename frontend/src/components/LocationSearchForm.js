@@ -4,37 +4,47 @@ import PropTypes from 'prop-types';
 import './LocationSearchForm.css';
 
 const LocationSearchForm = (props) => {
-  
+  const [updatedFormFields, setUpdatedFormFields] = useState({
+    country: '',
+    state: '',
+    city: '',
+  })
+
   const onInput = (event) => {
     const key = event.target.name;
     const value = event.target.value;
     const newFormFields = {
-      ...props.formFields,
+      ...updatedFormFields,
     }
     newFormFields[key] = value;
-    props.setFormFields(newFormFields);
+    setUpdatedFormFields(newFormFields);
   }
+  
+  const onSubmission = (event) => {
+    event.preventDefault();
+    props.setFormFields(updatedFormFields);
+}
   
   return (
     <div>
       <p>Please fill in your current location:</p>
-      <form>
+      <form onSubmit={onSubmission}>
       <p><input 
       placeholder="country"
       type="text"
       name="country"
-      //value={"fake value"}
       onChange={onInput}
-      value={props.formFields.country}
+      value={updatedFormFields.country}
       />
-      {/* <button onClick={helperFunction}>Submit Country</button> */}
+      
       </p>
       <p>
        <input 
       placeholder="state or department"
       type="text"
       name="state"
-      //value={formFields.state}
+      onChange={onInput}
+      value={updatedFormFields.state}
       /> 
       </p>
       <p>
@@ -42,9 +52,14 @@ const LocationSearchForm = (props) => {
       placeholder="city"
       type="text"
       name="city"
-      //value={formFields.city}
+      onChange={onInput}
+      value={updatedFormFields.city}
       /> 
       </p>
+      <div className="PlayerSubmissionForm__submit">
+          <input type="submit" value="Submit Location" className="PlayerSubmissionForm__submit-btn" />
+      </div>
+
       </form>
       
       
