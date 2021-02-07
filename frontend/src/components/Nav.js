@@ -16,6 +16,9 @@ return (
             <li>
                 <Link to="/login" className="nav-text">Login</Link>
             </li>
+            <li>
+                <Link to="/addpicture" className="nav-text">Add a Picture</Link>
+            </li>
         </ul>
     </nav>
 );

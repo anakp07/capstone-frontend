@@ -6,6 +6,12 @@ import Home from './components/Home';
 import Login from './components/Login';
 import LocationSearch from './components/LocationSearch';
 import Nav from './components/Nav';
+import AddPicture from './components/AddPicture';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+// import {ToastContainer} from "react-toastify";
+
 
 function App() {
   const [formFields, setFormFields] = useState({
@@ -27,12 +33,13 @@ function App() {
           <Route path="/locationsearch"><LocationSearch formFields={formFields} setFormFields={setFormFields}/></Route>
           {/* <Route path="/locationsearch"><LocationSearch locationIsSubtmitted={locationIsSubmitted} setLocation={setLocation} formFields={formFields} setFormFields={setFormFields}/></Route> */}
           <Route path="/login"><Login/></Route>
+          <Route path="/addpicture"><AddPicture/></Route>
+      
         </Switch>
         {/* {locationIsSubmitted && {formFields.country}} */}
       </div>
     </Router>
     You have selected {formFields.city}, {formFields.state}, {formFields.country}.
-
     </div>
     
   );
