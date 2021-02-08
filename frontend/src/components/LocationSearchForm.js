@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './LocationSearchForm.css';
+import ListView from './ListView';
 
 const LocationSearchForm = (props) => {
   const [updatedFormFields, setUpdatedFormFields] = useState({
@@ -23,6 +24,7 @@ const LocationSearchForm = (props) => {
   const onSubmission = (event) => {
     event.preventDefault();
     props.setFormFields(updatedFormFields);
+
 }
   
   return (
@@ -36,7 +38,6 @@ const LocationSearchForm = (props) => {
       onChange={onInput}
       value={updatedFormFields.country}
       />
-      
       </p>
       <p>
        <input 
@@ -54,19 +55,18 @@ const LocationSearchForm = (props) => {
       name="city"
       onChange={onInput}
       value={updatedFormFields.city}
-      /> 
+      />
       </p>
       <div className="PlayerSubmissionForm__submit">
-          <input type="submit" value="Submit Location" className="PlayerSubmissionForm__submit-btn" setLocation='true'/>
-
+          <input type="submit" value="Search by List" className="PlayerSubmissionForm__submit-btn" setLocation='true'/>
       </div>
-
       </form>
-      
+
       
     </div>
     
   )
 }
+
 
 export default LocationSearchForm;
