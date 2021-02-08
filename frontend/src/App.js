@@ -7,6 +7,7 @@ import Login from './components/Login';
 import LocationSearch from './components/LocationSearch';
 import Nav from './components/Nav';
 import AddPicture from './components/AddPicture';
+import ListView from './components/ListView';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -34,12 +35,12 @@ function App() {
           {/* <Route path="/locationsearch"><LocationSearch locationIsSubtmitted={locationIsSubmitted} setLocation={setLocation} formFields={formFields} setFormFields={setFormFields}/></Route> */}
           <Route path="/login"><Login/></Route>
           <Route path="/addpicture"><AddPicture/></Route>
-      
+          <Route path="/listview"><ListView/></Route>
         </Switch>
         {/* {locationIsSubmitted && {formFields.country}} */}
       </div>
     </Router>
-    You have selected {formFields.city}, {formFields.state}, {formFields.country}.
+    {/* You have selected {formFields.city}, {formFields.state}, {formFields.country}. */}
     </div>
     
   );
