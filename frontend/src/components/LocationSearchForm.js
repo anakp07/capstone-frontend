@@ -1,8 +1,6 @@
 
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import './LocationSearchForm.css';
-import ListView from './ListView';
 
 const LocationSearchForm = (props) => {
   const [updatedFormFields, setUpdatedFormFields] = useState({
