@@ -19,6 +19,9 @@ return (
             <li>
                 <Link to="/addpicture" className="nav-text">Add a Picture</Link>
             </li>
+            <li>
+                <Link to="/listview" className="nav-text">ListView</Link>
+            </li>
         </ul>
     </nav>
 );
