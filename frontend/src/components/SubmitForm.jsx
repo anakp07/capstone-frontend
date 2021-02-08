@@ -8,7 +8,7 @@ class SubmitForm extends React.Component {
 
     render() {
         return (
-            <div className="row mt-5 justify-content-center">us
+            <div className="row mt-5 justify-content-center">
                 <div className="col-12 col-lg-6 border border-1 p-4">
                     <form className="">
                         <div className="form-group">
