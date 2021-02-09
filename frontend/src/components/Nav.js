@@ -33,6 +33,9 @@ return (
                 <p>{isSearchComplete(props.formFields) && <Link to="/listview" className="nav-text">ListView</Link>}</p>
             </li>
             <li>
+                <p>{isSearchComplete(props.formFields) && <Link to="/mapview" className="nav-text">MapView</Link>}</p>
+            </li>
+            <li>
                 <p><Link to="/login" className="nav-text">Login</Link></p>
             </li>
             
