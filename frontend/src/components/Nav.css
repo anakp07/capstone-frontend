@@ -3,7 +3,8 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 10vh;
-    background: #C13584;
+    /* background: #C13584; */
+    background-image: linear-gradient(to right, #FF512F 0%, #DD2476  51%, #FF512F  100%);
     color: white;
     }
 .nav-links {
