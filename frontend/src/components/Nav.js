@@ -24,9 +24,6 @@ return (
                 <p><Link to="/locationsearch" className="nav-text">Location Search</Link></p>
             </li>
             <li>
-                <p><Link to="/login" className="nav-text">Login</Link></p>
-            </li>
-            <li>
                 <p><Link to="/addpicture" className="nav-text">Add a Picture</Link></p>
             </li>
             <li>
@@ -35,6 +32,10 @@ return (
             <li>
                 <p>{isSearchComplete(props.formFields) && <Link to="/listview" className="nav-text">ListView</Link>}</p>
             </li>
+            <li>
+                <p><Link to="/login" className="nav-text">Login</Link></p>
+            </li>
+            
             
         </ul>
     </nav>

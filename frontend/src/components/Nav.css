@@ -7,7 +7,7 @@ nav {
     color: white;
     }
 .nav-links {
-    width: 40%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -27,3 +27,6 @@ div {
     margin-top:
 }
   
+li {
+    display: inline;
+  }
