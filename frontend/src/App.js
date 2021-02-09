@@ -35,7 +35,7 @@ function App() {
           {/* <Route path="/locationsearch"><LocationSearch locationIsSubtmitted={locationIsSubmitted} setLocation={setLocation} formFields={formFields} setFormFields={setFormFields}/></Route> */}
           <Route path="/login"><Login/></Route>
           <Route path="/addpicture"><AddPicture/></Route>
-          <Route path="/listview"><ListView/></Route>
+          <Route path="/listview"><ListView formFields={formFields}/></Route>
         </Switch>
         {/* {locationIsSubmitted && {formFields.country}} */}
       </div>
