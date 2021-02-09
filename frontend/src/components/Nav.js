@@ -27,7 +27,7 @@ return (
                 <p><Link to="/addpicture" className="nav-text">Add a Picture</Link></p>
             </li>
             <li>
-                <p>{isSearchComplete(props.formFields) && `Location: ${props.formFields.city}, ${props.formFields.state}, ${props.formFields.country}`}</p>
+                <p className="location">{isSearchComplete(props.formFields) && `Location: ${props.formFields.city}, ${props.formFields.state}, ${props.formFields.country}:`}</p>
             </li>
             <li>
                 <p>{isSearchComplete(props.formFields) && <Link to="/listview" className="nav-text">ListView</Link>}</p>
