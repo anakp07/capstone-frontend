@@ -11,18 +11,14 @@ const ListView = (props) => {
     const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {
-        axios.get(API_URL_BASE)
+        axios.get(API_URL_BASE + '/searchlocation/' + props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city)
           .then((response) => {
             setPhotoList(response.data);
           })
           .catch((error) => {
             setErrorMessage(error.message);
           });
-      }, []);
-      
-      // for later use
-        // axios.get(API_URL_BASE + props.formFields)
-      // }, [props.formFields]);
+      }, [props.formFields]);
 
     const PhotoComponents = photoList.map((photo) => {
         return (< Photo
