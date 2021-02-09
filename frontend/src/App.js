@@ -8,6 +8,8 @@ import LocationSearch from './components/LocationSearch';
 import Nav from './components/Nav';
 import AddPicture from './components/AddPicture';
 import ListView from './components/ListView';
+import MapView from './components/MapView';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -36,6 +38,7 @@ function App() {
           <Route path="/login"><Login/></Route>
           <Route path="/addpicture"><AddPicture/></Route>
           <Route path="/listview"><ListView formFields={formFields}/></Route>
+          <Route path="/mapview"><MapView formFields={formFields}/></Route>
         </Switch>
         {/* {locationIsSubmitted && {formFields.country}} */}
       </div>
