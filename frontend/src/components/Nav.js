@@ -33,7 +33,7 @@ return (
                 <p>{isSearchComplete(props.formFields) && `Location: ${props.formFields.city}, ${props.formFields.state}, ${props.formFields.country}`}</p>
             </li>
             <li>
-                <p><Link to="/listview" className="nav-text">ListView</Link></p>
+                <p>{isSearchComplete(props.formFields) && <Link to="/listview" className="nav-text">ListView</Link>}</p>
             </li>
             
         </ul>
