@@ -27,7 +27,7 @@ function App() {
     <div>
       <Router>
       <div>
-        <Nav/>
+        <Nav formFields={formFields}/>
         <Switch>
           <Route exact path="/"/>
           <Route path="/home"><Home/></Route>
