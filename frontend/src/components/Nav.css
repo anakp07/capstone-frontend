@@ -4,7 +4,6 @@ nav {
     align-items: center;
     min-height: 10vh;
     background: #C13584;
-    color: white;
     }
 .nav-links {
     width: 100%;
@@ -30,3 +29,8 @@ div {
 li {
     display: inline;
   }
+
+nav h3 {
+    font-size: 3em;
+    color: white;
+}
