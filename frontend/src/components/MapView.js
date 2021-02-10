@@ -41,7 +41,7 @@ const MapView = (props: any) => {
     return (
         <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
-            bootstrapURLKeys={{ apiKey: 'AIzaSyBv3w3sBv8bZQac_QyYWfcBx0rQmcVvk-U' }}
+            bootstrapURLKeys={{ apiKey: process.env.REACT_APP_API_KEY}}
             defaultCenter={center}
             defaultZoom={zoom}
             >
@@ -49,7 +49,7 @@ const MapView = (props: any) => {
                 lat={47.444}
                 lng={-122.176}
                 name="My Marker"
-                color="red"
+                color="blue"
             />
         </GoogleMapReact>
         </div>
