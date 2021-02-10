@@ -48,7 +48,7 @@ const ListView = (props) => {
           <table>
             <tbody>
              <tr className="flex-container">
-             <td className="flex-item-left "><Link to="/listperspectiveview">{landmark}</Link></td> 
+             <td className="flex-item-left"><Link to="/listperspectiveview" className="landmarkName">{landmark}</Link></td> 
              <td className="flex-item-right">{listImages}</td>
             </tr> 
             </tbody>
@@ -70,7 +70,7 @@ const ListView = (props) => {
 
     return (
         <div className="ListView">
-        <h3>List View</h3>
+        <p>List View - Results for {props.formFields.city}, {props.formFields.state}, {props.formFields.country}:</p>
         {errorMessage ? <div><h2 className="error-msg">{errorMessage}</h2></div> : ''}
         {/* {PhotoComponents} */}
         {rows}

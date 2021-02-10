@@ -30,7 +30,7 @@ const LocationSearchForm = (props) => {
       <p>Please fill in your current location:</p>
       <form onSubmit={onSubmission}>
       <p><input 
-      placeholder="country"
+      placeholder="Country"
       type="text"
       name="country"
       onChange={onInput}
@@ -39,7 +39,7 @@ const LocationSearchForm = (props) => {
       </p>
       <p>
        <input 
-      placeholder="state or department"
+      placeholder="State or Department"
       type="text"
       name="state"
       onChange={onInput}
@@ -48,7 +48,7 @@ const LocationSearchForm = (props) => {
       </p>
       <p>
        <input 
-      placeholder="city"
+      placeholder="City"
       type="text"
       name="city"
       onChange={onInput}
