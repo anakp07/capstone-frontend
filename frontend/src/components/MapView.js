@@ -49,7 +49,7 @@ const MapView = (props: any) => {
                 lat={47.444}
                 lng={-122.176}
                 name="My Marker"
-                color="blue"
+                color="red"
             />
         </GoogleMapReact>
         </div>
