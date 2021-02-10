@@ -44,9 +44,9 @@ const ListView = (props) => {
       rows.push(
         <div key = {landmark}>
           <table>
-            <tr>
-             <td>{landmark}</td> 
-             <td>{listImages}</td>
+            <tr class="flex-container">
+             <td className="flex-item-left ">{landmark}</td> 
+             <td className="flex-item-right">{listImages}</td>
             </tr>
           </table>
         </div>
