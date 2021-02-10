@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Photo.css'
+// import './Photo.css'
 
 // photo would return the photos that have such landmark
 const Photo = (props) => {

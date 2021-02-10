@@ -56,7 +56,9 @@ const LocationSearchForm = (props) => {
       />
       </p>
       <div className="PlayerSubmissionForm__submit">
-          <input type="submit" value="Search by List" className="PlayerSubmissionForm__submit-btn" setLocation='true'/>
+          <input type="submit" value="Search by List" className="PlayerSubmissionForm__submit-btn"/>
+          {/* <input type="submit" value="Search by List" className="PlayerSubmissionForm__submit-btn" setLocation='true'/> */}
+
       </div>
       </form>
 

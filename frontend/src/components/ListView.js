@@ -1,7 +1,7 @@
 // import React from 'react';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-import Photo from './Photo';
+import Photo from './LandmarkPhoto';
 import PropTypes from 'prop-types';
 
 const ListView = (props) => {
@@ -14,7 +14,10 @@ const ListView = (props) => {
     const landmarksNamesRetriever = (photoList) => {
       const newLandmarksNames = {};
       photoList.forEach((photo) => {
-          newLandmarksNames[photo.landmark] = true
+        if (!newLandmarksNames[photo.landmark]){
+          newLandmarksNames[photo.landmark] = []
+        }
+        newLandmarksNames[photo.landmark].push(<img key = {photo.photo_id} className="photo__content" src = {photo.photo_url} alt={photo.landmark} />)
       }) 
       setLandmarksNames(newLandmarksNames);
     }
@@ -30,30 +33,38 @@ const ListView = (props) => {
           });
           
       }, [props.formFields]);
-    
-    //create a hash of the different landmarks for the retrieved city/state/country,
-  
-  
-    
-    
 
-    console.log(landmarksNames)
+
 
     // create a loop that iterates through the hash landmarkNames and creates a row of photos for each landmark (by calling the Photo component, with a specific value, that value being the landmarkname the loop is on)
-    const PhotoComponents = photoList.map((photo) => {
-      return (< Photo
-            key={photo.photo_id}
-            photo={photo}
-            onClickCallback={props.selectPhotoCallback}
-            // pass in the landmark name we are on in the loop
-            />)
-        })  
+
+    // const PhotoComponents = photoList.map((photo) => {
+    //   return (< Photo
+    //         key={photo.photo_id}
+    //         photo={photo}
+    //         onClickCallback={props.selectPhotoCallback}
+    //         // pass in the landmark name we are on in the loop
+    //         />)
+    //     })  
+    
+    const rows = []
+
+    for (const landmark in landmarksNames){
+      const listImages = landmarksNames[landmark]
+      rows.push(
+        <div key = {landmark}>
+          <p>{landmark}</p>
+          <div>{listImages}</div>
+        </div>
+      )
+    }
 
     return (
         <div className="ListView">
         <h3>ListView page</h3>
         {errorMessage ? <div><h2 className="error-msg">{errorMessage}</h2></div> : ''}
-        {PhotoComponents}
+        {/* {PhotoComponents} */}
+        {rows}
         </div>
     )
 };
