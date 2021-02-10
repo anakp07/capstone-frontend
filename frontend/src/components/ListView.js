@@ -18,7 +18,9 @@ const ListView = (props) => {
         if (!newLandmarksNames[photo.landmark]){
           newLandmarksNames[photo.landmark] = []
         }
+        if (newLandmarksNames[photo.landmark].length < 5){
         newLandmarksNames[photo.landmark].push(<img key = {photo.photo_id} src = {photo.photo_url} alt={photo.landmark} />)
+        }
       }) 
       setLandmarksNames(newLandmarksNames);
     }
