@@ -10,6 +10,7 @@ const ListView = (props) => {
 
     const [photoList, setPhotoList] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
+    
     const [landmarksNames, setLandmarksNames] = useState({});
     
     const landmarksNamesRetriever = (photoList) => {
