@@ -55,17 +55,11 @@ const ListView = (props) => {
       rows.push(
         <div key = {landmark}>
           <table>
-            {/* <tr>
-              <th>landmark name</th> 
-              <th>photos</th>
-            </tr> */}
             <tr>
              <td>{landmark}</td> 
              <td>{listImages}</td>
             </tr>
-       </table>
-          {/* <p>{landmark}</p>
-          <div>{listImages}</div> */}
+          </table>
         </div>
       )
     }
