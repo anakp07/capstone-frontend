@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Photo from './unusedPhoto';
 import PropTypes from 'prop-types';
+import './ListView.css';
+
 
 const ListView = (props) => {
     const API_URL_BASE = 'http://localhost:3000/photos';
@@ -17,7 +19,7 @@ const ListView = (props) => {
         if (!newLandmarksNames[photo.landmark]){
           newLandmarksNames[photo.landmark] = []
         }
-        newLandmarksNames[photo.landmark].push(<img key = {photo.photo_id} className="photo__content" src = {photo.photo_url} alt={photo.landmark} />)
+        newLandmarksNames[photo.landmark].push(<img key = {photo.photo_id} src = {photo.photo_url} alt={photo.landmark} />)
       }) 
       setLandmarksNames(newLandmarksNames);
     }
