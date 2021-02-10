@@ -9,7 +9,7 @@ import Nav from './components/Nav';
 import AddPicture from './components/AddPicture';
 import ListView from './components/ListView';
 import MapView from './components/MapView';
-
+import ListPerspectiveView from './components/ListPerspectiveView';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 // import {ToastContainer} from "react-toastify";
@@ -43,6 +43,7 @@ function App() {
           <Route path="/addpicture"><AddPicture/></Route>
           <Route path="/listview"><ListView formFields={formFields}/></Route>
           <Route path="/mapview"><MapView formFields={formFields}/></Route>
+          <Route path="/listperspectiveview"><ListPerspectiveView selectedLandmark={selectedLandmark}/></Route>
 
         </Switch>
         {/* {locationIsSubmitted && {formFields.country}} */}
