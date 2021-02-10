@@ -58,7 +58,6 @@ const ListView = (props) => {
       )
     }
 
-
     // const PhotoComponents = photoList.map((photo) => {
     //   return (< Photo
     //         key={photo.photo_id}
