@@ -3,6 +3,7 @@ import axios from "axios";
 import Photo from './unusedPhoto';
 import PropTypes from 'prop-types';
 import './ListView.css';
+import {Link} from 'react-router-dom';
 
 
 const ListView = (props) => {
@@ -45,10 +46,13 @@ const ListView = (props) => {
       rows.push(
         <div key = {landmark}>
           <table>
-            <tr class="flex-container">
-             <td className="flex-item-left ">{landmark}</td> 
+            <tbody>
+             <tr className="flex-container">
+             <td className="flex-item-left "><Link to="/listperspectiveview">{landmark}</Link></td> 
              <td className="flex-item-right">{listImages}</td>
-            </tr>
+            </tr> 
+            </tbody>
+            
           </table>
         </div>
       )

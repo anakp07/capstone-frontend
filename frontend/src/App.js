@@ -22,9 +22,9 @@ function App() {
   })
 
   const [selectedLandmark, setSelectedLandmark] = useState({
-    landmark: '',
-    latitude: '',
-    longitude: '',
+    landmark: 'Notre Dame'
+    // latitude: '',
+    // longitude: '',
   })
 
   // const [locationIsSubmitted, setLocation] = useState(false)
@@ -43,7 +43,7 @@ function App() {
           <Route path="/addpicture"><AddPicture/></Route>
           <Route path="/listview"><ListView formFields={formFields}/></Route>
           <Route path="/mapview"><MapView formFields={formFields}/></Route>
-          <Route path="/listperspectiveview"><ListPerspectiveView selectedLandmark={selectedLandmark}/></Route>
+          <Route path="/listperspectiveview"><ListPerspectiveView formFields={formFields} selectedLandmark={selectedLandmark}/></Route>
 
         </Switch>
         {/* {locationIsSubmitted && {formFields.country}} */}
