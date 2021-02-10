@@ -1,4 +1,3 @@
-// import React from 'react';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Photo from './unusedPhoto';
@@ -55,8 +54,18 @@ const ListView = (props) => {
       const listImages = landmarksNames[landmark]
       rows.push(
         <div key = {landmark}>
-          <p>{landmark}</p>
-          <div>{listImages}</div>
+          <table>
+            {/* <tr>
+              <th>landmark name</th> 
+              <th>photos</th>
+            </tr> */}
+            <tr>
+             <td>{landmark}</td> 
+             <td>{listImages}</td>
+            </tr>
+       </table>
+          {/* <p>{landmark}</p>
+          <div>{listImages}</div> */}
         </div>
       )
     }
