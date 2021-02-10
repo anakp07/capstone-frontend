@@ -6,34 +6,50 @@ import './ListPerspectiveView.css';
 const ListPerspectiveView = (props) => {
     const API_URL_BASE = 'http://localhost:3000/photos';
 
+
+    console.log(props)
+    
     const [photoList, setPhotoList] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
     const [perspectives, setPerspectives] = useState({});
+    const [selectedLandmark, setSelectedLandmark] = useState(props.selectedLandmark);
     
-    const perspectivesRetriever = (photoList) => {
+    const perspectivesRetriever = (photoList, selectedLandmark) => {
       const newPerspectives = {};
       photoList.forEach((photo) => {
-        if (photo.landmark === props.selectedLandmark.landmark && !newPerspectives[photo.perspective]){
+        if (photo.landmark === selectedLandmark.landmark && !newPerspectives[photo.perspective]){
           newPerspectives[photo.perspective] = []
         }
-        if (newPerspectives[photo.perspective].length < 5){
+        if (photo.landmark === selectedLandmark.landmark && newPerspectives[photo.perspective].length < 5){
         newPerspectives[photo.perspective].push(<img key = {photo.photo_id} src = {photo.photo_url} alt={photo.perspective} />)
         }
       }) 
       setPerspectives(newPerspectives);
     }
 
-    useEffect(() => {
-        axios.get(API_URL_BASE + '/searchlocation/' + props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city + '/')
-          .then((response) => {
-            setPhotoList(response.data);
-            perspectivesRetriever(response.data);
-          })
-          .catch((error) => {
-            setErrorMessage(error.message);
-          });
+    // useEffect(() => {
+    //     axios.get(API_URL_BASE + '/searchlocation/' + props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city)
+    //       .then((response) => {
+    //         setPhotoList(response.data);
+    //         perspectivesRetriever(response.data);
+    //       })
+    //       .catch((error) => {
+    //         setErrorMessage(error.message);
+    //       });
           
-      }, [props.formFields]);
+    //   }, [props.formFields]);
+    useEffect(() => {
+      axios.get(API_URL_BASE + '/searchlocation/' + props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city)
+        .then((response) => {
+          setPhotoList(response.data);
+          perspectivesRetriever(response.data, selectedLandmark);
+        })
+        .catch((error) => {
+          console.log(error)
+          setErrorMessage(error.message);
+        });
+        
+    }, [props.formFields]);
     
     const rows = []
 
@@ -59,9 +75,5 @@ const ListPerspectiveView = (props) => {
         </div>
     )
 };
-
-// Photo.propTypes = {
-//     selectPhotoCallback: PropTypes.func.isRequired
-// }
 
 export default ListPerspectiveView;

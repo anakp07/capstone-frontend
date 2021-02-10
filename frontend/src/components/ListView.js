@@ -11,7 +11,6 @@ const ListView = (props) => {
 
     const [photoList, setPhotoList] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
-    
     const [landmarksNames, setLandmarksNames] = useState({});
     
     const landmarksNamesRetriever = (photoList) => {
@@ -48,7 +47,7 @@ const ListView = (props) => {
           <table>
             <tbody>
              <tr className="flex-container">
-             <td className="flex-item-left"><Link to="/listperspectiveview" className="landmarkName">{landmark}</Link></td> 
+             <td className="flex-item-left"><Link to="/listperspectiveview" className="landmarkName" landmarkSelected={landmark} formFields={props.formFields}>{landmark}</Link></td> 
              <td className="flex-item-right">{listImages}</td>
             </tr> 
             </tbody>
