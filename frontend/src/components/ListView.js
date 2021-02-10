@@ -34,19 +34,6 @@ const ListView = (props) => {
           });
           
       }, [props.formFields]);
-
-
-
-    // create a loop that iterates through the hash landmarkNames and creates a row of photos for each landmark (by calling the Photo component, with a specific value, that value being the landmarkname the loop is on)
-
-    // const PhotoComponents = photoList.map((photo) => {
-    //   return (< Photo
-    //         key={photo.photo_id}
-    //         photo={photo}
-    //         onClickCallback={props.selectPhotoCallback}
-    //         // pass in the landmark name we are on in the loop
-    //         />)
-    //     })  
     
     const rows = []
 
@@ -64,9 +51,19 @@ const ListView = (props) => {
       )
     }
 
+
+    // const PhotoComponents = photoList.map((photo) => {
+    //   return (< Photo
+    //         key={photo.photo_id}
+    //         photo={photo}
+    //         onClickCallback={props.selectPhotoCallback}
+    //         // pass in the landmark name we are on in the loop
+    //         />)
+    //     })  
+
     return (
         <div className="ListView">
-        <h3>ListView page</h3>
+        <h3>List View</h3>
         {errorMessage ? <div><h2 className="error-msg">{errorMessage}</h2></div> : ''}
         {/* {PhotoComponents} */}
         {rows}
