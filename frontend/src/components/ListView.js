@@ -9,22 +9,43 @@ const ListView = (props) => {
 
     const [photoList, setPhotoList] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
+    const [landmarksNames, setLandmarksNames] = useState({});
+    
+    const landmarksNamesRetriever = (photoList) => {
+      const newLandmarksNames = {};
+      photoList.forEach((photo) => {
+          newLandmarksNames[photo.landmark] = true
+      }) 
+      setLandmarksNames(newLandmarksNames);
+    }
 
     useEffect(() => {
         axios.get(API_URL_BASE + '/searchlocation/' + props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city)
           .then((response) => {
             setPhotoList(response.data);
+            landmarksNamesRetriever(response.data);
           })
           .catch((error) => {
             setErrorMessage(error.message);
           });
+          
       }, [props.formFields]);
+    
+    //create a hash of the different landmarks for the retrieved city/state/country,
+  
+  
+    
+    
 
+    console.log(landmarksNames)
+
+    // create a loop that iterates through the hash landmarkNames and creates a row of photos for each landmark (by calling the Photo component, with a specific value, that value being the landmarkname the loop is on)
     const PhotoComponents = photoList.map((photo) => {
-        return (< Photo
+      return (< Photo
             key={photo.photo_id}
             photo={photo}
             onClickCallback={props.selectPhotoCallback}
+            // pass in the landmark name we are on in the loop
             />)
         })  
 
