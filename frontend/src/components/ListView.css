@@ -23,29 +23,11 @@ img {
 
 .flex-item-right {
   flex: 90%;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: right;
 }
-
-td {
-    padding: 25px;
-  }
-
-td .images {
-    justify-content: right;
-}
-
-/* link:visited {
-color:#00FF00;
-}
-
-link:hover {
-color:#FF00FF;
-} */
 
 p, .landmarkName {
   font-size: 1em;
   color: #C13584;
-  /* font-weight: bold; */
   }
   

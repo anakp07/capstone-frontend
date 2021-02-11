@@ -38,6 +38,10 @@ const ListView = (props) => {
           
       }, [props.formFields]);
     
+    const updateLandmark = () => {
+
+    }
+    
     const rows = []
 
     for (const landmark in landmarksNames){
