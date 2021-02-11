@@ -40,46 +40,66 @@ const MapView = (props) => {
 
     const [photoList,setPhotoList] = useState([]);
     const [errorMessage,setErrorMessage] = useState(null);
-    const [landmarksNames,setLandmarksNames] = useState({});
 
-    const landmarksNamesRetriever = (photoList) => {
-        const newLandmarkskNames = {};
-        photoList.forEach((photo) => {
-            if (!newLandmarkskNames[photo.landmark]){
-                newLandmarkskNames[photo.landmark]= []
-            }
-            setLandmarksNames(newLandmarkskNames)
-        });
+    const calculateCenter = (photoList) => {
+        let latitude = 0 
+        let longitude = 0
+        for (const photo of photoList) {
+            latitude += photo.latitude 
+            // console.log
+            longitude += photo.longitude 
+        }
+        latitude /= photoList.length
+        longitude/= photoList.length
+
+        setCenter({lat:latitude , lng: longitude})
+      // make sure that photo list insnt empty - make sure photo length isnt 0 
+        
     }
-
+    
     useEffect(() => {
-        console.log(props.formFields.country)
-        console.log(props.formFields.city)
-        console.log(props.formFields.state)
+        // console.log(props.formFields.country)
+        // console.log(props.formFields.city)
+        // console.log(props.formFields.state)
         axios.get(API_URL_BASE + '/searchlocation/' +  props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city)
             .then((response) => {
                 setPhotoList(response.data)
-                landmarksNamesRetriever(response.data);
+                calculateCenter(response.data);  // find center here 
             })
             .catch((error) => {
                 setErrorMessage(error.message);
             });
     }, [props.formFields]);
+    
 
 
-    const [center, setCenter] = useState({lat: props.latitude, lng: props.longitude });
+    const [center, setCenter] = useState({lat: 0,lng: 0});
 
     const [zoom, setZoom] = useState(11);
 
     return (
         <div style={{ height: '100vh', width: '100%' }}>
+            {(photoList.length > 0)&& (
         <GoogleMapReact
             bootstrapURLKeys={{ apiKey: process.env.REACT_APP_API_KEY}}
             defaultCenter={center}
             defaultZoom={zoom}
             >
-    
+                {photoList.map((photo) => {
+                    return (
+                        <Marker
+                            key={photo.photo_id}
+                            lat={photo.latitude}
+                            lng={photo.longitude}
+                            name={photo.landmark}
+                            color="blue"
+                        />
+                    )
+
+                })}
+                
         </GoogleMapReact>
+            )}
         </div>
     );
 }
