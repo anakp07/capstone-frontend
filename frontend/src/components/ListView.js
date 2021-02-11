@@ -45,12 +45,10 @@ const ListView = (props) => {
       rows.push(
         <div key = {landmark}>
           <table>
-            <tbody>
              <tr className="flex-container">
-             <td className="flex-item-left"><Link to="/listperspectiveview" className="landmarkName" landmarkSelected={landmark} formFields={props.formFields}>{landmark}</Link></td> 
-             <td className="flex-item-right">{listImages}</td>
+              <td className="flex-item-left"><Link to="/listperspectiveview" className="landmarkName" landmarkSelected={landmark} formFields={props.formFields}>{landmark}</Link></td> 
+              <td className="flex-item-right">{listImages}</td>
             </tr> 
-            </tbody>
             
           </table>
         </div>

@@ -23,6 +23,8 @@ img {
 
 .flex-item-right {
   flex: 90%;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 td {
@@ -34,15 +36,16 @@ td .images {
 }
 
 /* link:visited {
-  color:#00FF00;
+color:#00FF00;
 }
 
 link:hover {
-  color:#FF00FF;
+color:#FF00FF;
 } */
 
 p, .landmarkName {
   font-size: 1em;
   color: #C13584;
   /* font-weight: bold; */
-}
+  }
+  
