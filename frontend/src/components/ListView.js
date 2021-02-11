@@ -44,10 +44,12 @@ const ListView = (props) => {
       rows.push(
         <div key = {landmark}>
           <table>
-            <tr class="flex-container">
+            <tbody>
+            <tr className="flex-container">
              <td className="flex-item-left ">{landmark}</td> 
              <td className="flex-item-right">{listImages}</td>
             </tr>
+            </tbody>
           </table>
         </div>
       )
