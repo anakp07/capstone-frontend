@@ -59,7 +59,7 @@ const ListPerspectiveView = (props) => {
         <div key = {perspective}>
           <table>
             <tr class="flex-container">
-             <td className="flex-item-left ">{perspective}</td> 
+             <td className="flex-item-left " ><div className="perspectiveName">{perspective}</div></td> 
              <td className="flex-item-right">{listImages}</td>
             </tr>
           </table>

@@ -18,11 +18,11 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 30%;
+    flex: 10%;
 }
 
 .flex-item-right {
-  flex: 70%;
+  flex: 90%;
 }
 
 td {
