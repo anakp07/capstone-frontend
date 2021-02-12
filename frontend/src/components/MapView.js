@@ -33,6 +33,9 @@ import GoogleMapReact from 'google-map-react';
 import Marker from './Marker';
 import axios from "axios";
 
+import './MapView.css';
+
+
 
 
 const MapView = (props) => {
@@ -78,8 +81,10 @@ const MapView = (props) => {
     const [zoom, setZoom] = useState(11);
 
     return (
-        <div style={{ height: '100vh', width: '100%' }}>
-            {(photoList.length > 0)&& (
+        <div className="flexbox-wrap-container">
+            <div className="flexbox-left">LIST OF LANDMARKS </div>
+            <div className="flexbox-right"> ALL LANDMARKS - MAP VIEW 
+        {(photoList.length > 0)&& (
         <GoogleMapReact
             bootstrapURLKeys={{ apiKey: process.env.REACT_APP_API_KEY}}
             defaultCenter={center}
@@ -95,12 +100,33 @@ const MapView = (props) => {
                             color="blue"
                         />
                     )
-
-                })}
-                
+                })}           
         </GoogleMapReact>
             )}
+                </div>
+            
         </div>
+        // <div style={{ height: '100vh', width: '100%' }}>
+        //     {(photoList.length > 0)&& (
+        // <GoogleMapReact
+        //     bootstrapURLKeys={{ apiKey: process.env.REACT_APP_API_KEY}}
+        //     defaultCenter={center}
+        //     defaultZoom={zoom}
+        //     >
+        //         {photoList.map((photo) => {
+        //             return (
+        //                 <Marker
+        //                     key={photo.photo_id}
+        //                     lat={photo.latitude}
+        //                     lng={photo.longitude}
+        //                     name={photo.landmark}
+        //                     color="blue"
+        //                 />
+        //             )
+        //         })}           
+        // </GoogleMapReact>
+        //     )}
+        // </div>
     );
 }
 
