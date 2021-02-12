@@ -7,20 +7,33 @@ const ListPerspectiveView = (props) => {
     const API_URL_BASE = 'http://localhost:3000/photos';
 
 
-    console.log(props)
+    console.log("list perspective props:" ,props)
     
     const [photoList, setPhotoList] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
     const [perspectives, setPerspectives] = useState({});
-    const [selectedLandmark, setSelectedLandmark] = useState(props.selectedLandmark);
+    // const [selectedLandmark, setSelectedLandmark] = useState(props.selectedLandmark);
     
-    const perspectivesRetriever = (photoList, selectedLandmark) => {
+    // const perspectivesRetriever = (photoList, props.selectedLandmark) => {
+    //   const newPerspectives = {};
+    //   photoList.forEach((photo) => {
+    //     if (photo.landmark === props.selectedLandmark.landmark && !newPerspectives[photo.perspective]){
+    //       newPerspectives[photo.perspective] = []
+    //     }
+    //     if (photo.landmark === props.selectedLandmark.landmark && newPerspectives[photo.perspective].length < 5){
+    //     newPerspectives[photo.perspective].push(<img key = {photo.photo_id} src = {photo.photo_url} alt={photo.perspective} />)
+    //     }
+    //   }) 
+    //   setPerspectives(newPerspectives);
+    // }
+
+    const perspectivesRetriever = (photoList) => {
       const newPerspectives = {};
       photoList.forEach((photo) => {
-        if (photo.landmark === selectedLandmark.landmark && !newPerspectives[photo.perspective]){
+        if (photo.landmark === props.selectedLandmark.landmark && !newPerspectives[photo.perspective]){
           newPerspectives[photo.perspective] = []
         }
-        if (photo.landmark === selectedLandmark.landmark && newPerspectives[photo.perspective].length < 5){
+        if (photo.landmark === props.selectedLandmark.landmark && newPerspectives[photo.perspective].length < 5){
         newPerspectives[photo.perspective].push(<img key = {photo.photo_id} src = {photo.photo_url} alt={photo.perspective} />)
         }
       }) 
@@ -42,7 +55,9 @@ const ListPerspectiveView = (props) => {
       axios.get(API_URL_BASE + '/searchlocation/' + props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city)
         .then((response) => {
           setPhotoList(response.data);
-          perspectivesRetriever(response.data, selectedLandmark);
+          // perspectivesRetriever(response.data, props.selectedLandmark);
+          perspectivesRetriever(response.data);
+
         })
         .catch((error) => {
           console.log(error)
@@ -59,7 +74,11 @@ const ListPerspectiveView = (props) => {
         <div key = {perspective}>
           <table>
             <tr class="flex-container">
-             <td className="flex-item-left " ><div className="perspectiveName">{perspective}</div></td> 
+             <td className="perspectiveNameandLinkContainer">
+               <div className="perspectiveName">
+                {perspective}
+                </div>
+              </td> 
              <td className="flex-item-right">{listImages}</td>
             </tr>
           </table>
@@ -69,7 +88,7 @@ const ListPerspectiveView = (props) => {
 
     return (
         <div className="ListView">
-        <h3>List View</h3>
+        {/* <h3>List View</h3> */}
         {errorMessage ? <div><h2 className="error-msg">{errorMessage}</h2></div> : ''}
         {rows}
         </div>
