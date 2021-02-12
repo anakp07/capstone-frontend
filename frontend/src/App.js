@@ -22,7 +22,7 @@ function App() {
   })
 
   const [selectedLandmark, setSelectedLandmark] = useState({
-    landmark: 'Notre Dame',
+    landmark: '',
     latitude: '',
     longitude: ''
   })
