@@ -9,7 +9,7 @@ const MapView = (props) => {
 
     const [photoList,setPhotoList] = useState([]);
     const [errorMessage,setErrorMessage] = useState(null);
-     const [landmarksPerspectives, setLandmarksPerspectives] = useState({});
+
 
     const calculateCenter = (photoList) => {
         let latitude = 0 
@@ -44,12 +44,12 @@ const MapView = (props) => {
     return (
         <div className="flexbox-wrap-container">
             <div className="flexbox-left"><h3>LIST OF PERSPECTIVES</h3>
-            <h4> Arc de Triomphe</h4>
+            {/* <h4> Arc de Triomphe</h4>
             <ul>
                 <li> Avenue-de-la-Grande-Armee</li>
                 <li> Champs-Elysees</li>
                 <li> Place-du-General-Brocard</li>
-            </ul> 
+            </ul>  */}
             </div>
             <div className="flexbox-right"> <h3>LANDMARKS - MAP VIEW</h3>
                 {(photoList.length > 0)&& (
