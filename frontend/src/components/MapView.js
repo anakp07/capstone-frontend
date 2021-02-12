@@ -3,6 +3,8 @@ import GoogleMapReact from 'google-map-react';
 import Marker from './Marker';
 import axios from "axios";
 import './MapView.css';
+import Perspective from './Perspective';
+
 
 const MapView = (props) => {
     const API_URL_BASE = 'http://localhost:3000/photos';
@@ -24,25 +26,36 @@ const MapView = (props) => {
       // make sure that photo list insnt empty - make sure photo length isnt 0 
         
     }
-    
+
+
     useEffect(() => {
         axios.get(API_URL_BASE + '/searchlocation/' +  props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city)
             .then((response) => {
                 setPhotoList(response.data)
-                calculateCenter(response.data);  // find center here 
+                calculateCenter(response.data);
+                console.log(response)
+                console.log(response)  // find center here 
             })
             .catch((error) => {
                 setErrorMessage(error.message);
             });
     }, [props.formFields]);
-    
+
     const [center, setCenter] = useState({lat: 0,lng: 0});
 
     const [zoom, setZoom] = useState(14);
 
     return (
         <div className="flexbox-wrap-container">
-            <div className="flexbox-left"><h3>LIST OF LANDMARKS</h3></div>
+            <div className="flexbox-left"><h3>LIST OF PERSPECTIVES </h3>
+            <h4> Arc de Triomphe</h4>
+            <ul>
+                <li> Avenue-de-la-Grande-Armee</li>
+                <li> Champs-Elysees</li>
+                <li> Place-du-General-Brocard</li>
+            </ul> 
+            </div>
+            
             <div className="flexbox-right"> <h3>LANDMARKS - MAP VIEW</h3>
                 {(photoList.length > 0)&& (
                 <GoogleMapReact
@@ -56,7 +69,7 @@ const MapView = (props) => {
                                     key={photo.photo_id}
                                     lat={photo.latitude}
                                     lng={photo.longitude}
-                                    name={photo.landmark}
+                                    // name={photo.landmark}
                                     color="blue"
                                 />
                             )
