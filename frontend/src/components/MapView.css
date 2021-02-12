@@ -1,0 +1,26 @@
+.flexbox-wrap-container {
+    display: flex;
+}
+
+/* .flexbox-item {
+    margin: 10px;
+    border: 3px solid red;
+    background-color: white;
+} */
+
+.flexbox-left {
+    flex: 1;    
+    height: 1000px;
+    width: auto;
+    flex-direction: row;
+    justify-content: center
+}   
+
+.flexbox-right{
+    flex: 4;
+    height: 1000px;
+    width: auto;
+    flex-direction: row;
+
+}
+
