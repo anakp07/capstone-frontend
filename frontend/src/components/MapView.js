@@ -58,13 +58,16 @@ const MapView = (props) => {
                     defaultZoom={zoom}
                     >
                         {photoList.map((photo) => {
+                            // console.log(photo)
                             return (
                                 <Marker
                                     key={photo.photo_id}
                                     lat={photo.latitude}
                                     lng={photo.longitude}
-                                    name={photo.landmark}
+                                    landmark={photo.landmark}
+                                    perspective={photo.perspective}
                                     color="blue"
+
                                 />
                             )
                         })}           
