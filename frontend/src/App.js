@@ -22,13 +22,15 @@ function App() {
   })
 
   const [selectedLandmark, setSelectedLandmark] = useState({
-    landmark: 'Notre Dame'
-    // latitude: '',
-    // longitude: '',
+    landmark: 'Notre Dame',
+    latitude: '',
+    longitude: ''
   })
 
-  // const [locationIsSubmitted, setLocation] = useState(false)
+  // const [selectedLandmark, setSelectedLandmark] = useState('Notre Dame')
 
+  // const [locationIsSubmitted, setLocation] = useState(false)
+console.log("setSelectedLandmark:", setSelectedLandmark)
   return (
     <div>
       <Router>
@@ -37,13 +39,13 @@ function App() {
         <Switch>
           <Route exact path="/"/>
           <Route path="/home"><Home/></Route>
-          <Route path="/locationsearch"><LocationSearch formFields={formFields} setFormFields={setFormFields}/></Route>
+          <Route path="/locationsearch"><LocationSearch formFields={formFields} setFormFields={setFormFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark}/></Route>
           {/* <Route path="/locationsearch"><LocationSearch locationIsSubtmitted={locationIsSubmitted} setLocation={setLocation} formFields={formFields} setFormFields={setFormFields}/></Route> */}
           <Route path="/login"><Login/></Route>
           <Route path="/addpicture"><AddPicture/></Route>
-          <Route path="/listview"><ListView formFields={formFields}/></Route>
+          <Route path="/listview"><ListView formFields={formFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark}/></Route>
           <Route path="/mapview"><MapView formFields={formFields}/></Route>
-          <Route path="/listperspectiveview"><ListPerspectiveView formFields={formFields} selectedLandmark={selectedLandmark}/></Route>
+          <Route path="/listperspectiveview"><ListPerspectiveView formFields={formFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark}/></Route>
 
         </Switch>
         {/* {locationIsSubmitted && {formFields.country}} */}

@@ -18,7 +18,7 @@ const LocationSearchForm = (props) => {
     newFormFields[key] = value;
     setUpdatedFormFields(newFormFields);
   }
-  
+
   const onSubmission = (event) => {
     event.preventDefault();
     props.setFormFields(updatedFormFields);

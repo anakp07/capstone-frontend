@@ -7,12 +7,13 @@ import {Link} from 'react-router-dom';
 
 
 const ListView = (props) => {
+    console.log("original props:", props);
     const API_URL_BASE = 'http://localhost:3000/photos';
 
     const [photoList, setPhotoList] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
     const [landmarksNames, setLandmarksNames] = useState({});
-    
+    // const [selectedLandmark, setSelectedLandmark] = useState(props.selectedLandmark);
     const landmarksNamesRetriever = (photoList) => {
       const newLandmarksNames = {};
       photoList.forEach((photo) => {
@@ -40,6 +41,14 @@ const ListView = (props) => {
     
     const rows = []
 
+    const updateSelectedLandmark = (landmarkName) => {
+      props.setSelectedLandmark({
+        landmark: landmarkName,
+        latitude: '',
+        longitude: ''
+      })
+    }
+
     for (const landmark in landmarksNames){
       const listImages = landmarksNames[landmark]
       rows.push(
@@ -47,7 +56,15 @@ const ListView = (props) => {
           <table>
             <tbody>
              <tr className="flex-container">
-             <td className="flex-item-left"><Link to="/listperspectiveview" className="landmarkName" landmarkSelected={landmark} formFields={props.formFields}>{landmark}</Link></td> 
+             {/* <td className="flex-item-left"><Link to="/listperspectiveview" className="landmarkName" landmarkSelected={landmark} formFields={props.formFields}>{landmark}</Link></td> */}
+             <td className="flex-item-left">
+               <div className="landmarkName">{landmark}</div>
+               {/* <div className="flex-item-left" onClick={updateSelectedLandmark(landmark)}><Link to="/listperspectiveview" >Click here for all the best perspectives!</Link></div>  */}
+               <div className="flex-item-left" onClick={() => updateSelectedLandmark(landmark)}><Link to="/listperspectiveview" >Click here for all the best perspectives!</Link></div> 
+            </td>
+            
+            {/* <td className="flex-item-left"><Link to="/listperspectiveview" landmarkSelected={landmark} formFields={props.formFields}>Click here for all the best perspectives!</Link></td> */}
+
              <td className="flex-item-right">{listImages}</td>
             </tr> 
             </tbody>
