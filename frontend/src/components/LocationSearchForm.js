@@ -58,14 +58,17 @@ const updateSelectedView= (selectedView) => {
       value={updatedFormFields.city}
       />
       </p>
-      <div className="PlayerSubmissionForm__submit">
+      {/* <div className="flex-container"> */}
+       <div className="PlayerSubmissionForm__submit">
           <input type="submit" value="Search by List" onClick={() => updateSelectedView('list')} className="PlayerSubmissionForm__submit-btn"/>
           {/* <input type="submit" value="Search by List" className="PlayerSubmissionForm__submit-btn" setLocation='true'/> */}
       </div>
       <div className="PlayerSubmissionForm__submit">
           <input type="submit" value="Search by Map" onClick={() => updateSelectedView('map')} className="PlayerSubmissionForm__submit-btn"/>
           {/* <input type="submit" value="Search by List" className="PlayerSubmissionForm__submit-btn" setLocation='true'/> */}
-      </div>
+      </div> 
+      {/* </div> */}
+      
       </form>
 
       

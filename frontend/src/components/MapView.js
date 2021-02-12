@@ -9,7 +9,45 @@ const MapView = (props) => {
 
     const [photoList,setPhotoList] = useState([]);
     const [errorMessage,setErrorMessage] = useState(null);
+    const [landmarksNames, setLandmarksNames] = useState({});
 
+    const landmarksNamesRetriever = (photoList) => {
+      const newLandmarksNames = {};
+      photoList.forEach((photo) => {
+        if (!newLandmarksNames[photo.landmark]){
+          newLandmarksNames[photo.landmark] = []
+        }
+        if(!newLandmarksNames[photo.landmark].includes(photo.perspective)){
+            newLandmarksNames[photo.landmark].push(photo.perspective)
+        }
+      }) 
+      setLandmarksNames(newLandmarksNames);
+    }
+
+    const rows = []
+
+    for (const landmark in landmarksNames){
+        const listPerspectives = landmarksNames[landmark]
+        rows.push(
+          <div key = {landmark}>
+            <table>
+               <tr className="flex-container">
+                <td className="landmarkNameAndLinkContainer">
+                 <div className="landmarkName">{landmark}</div>
+                </td>
+               {/* <td className="flex-item-right">{listPerspectives}</td> */}
+               <td>
+               <ul>
+                {listPerspectives.map(perspective =>  
+                <li><p>{perspective}</p></li>
+                )}
+            </ul> 
+               </td>
+              </tr> 
+            </table>
+          </div>
+        )
+      }
 
     const calculateCenter = (photoList) => {
         let latitude = 0 
@@ -31,6 +69,7 @@ const MapView = (props) => {
             .then((response) => {
                 setPhotoList(response.data)
                 calculateCenter(response.data);  // find center here 
+                landmarksNamesRetriever(response.data);
             })
             .catch((error) => {
                 setErrorMessage(error.message);
@@ -44,11 +83,13 @@ const MapView = (props) => {
     return (
         <div className="flexbox-wrap-container">
             <div className="flexbox-left"><h3>LIST OF PERSPECTIVES</h3>
-            <ul>
+            {/* <ul>
                 {photoList.map(photo =>  
                 <li>Photo ID: {photo.photo_id} Perspective: {photo.perspective}</li>
                 )};
-            </ul>
+            </ul> */}
+            {rows}
+
             </div>
             <div className="flexbox-right"> <h3>LANDMARKS - MAP VIEW</h3>
                 {(photoList.length > 0)&& (

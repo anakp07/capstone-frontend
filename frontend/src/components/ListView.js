@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom';
 
 
 const ListView = (props) => {
-    console.log("original props:", props);
     const API_URL_BASE = 'http://localhost:3000/photos';
 
     const [photoList, setPhotoList] = useState([]);
