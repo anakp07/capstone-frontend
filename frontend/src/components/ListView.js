@@ -39,9 +39,9 @@ const ListView = (props) => {
           
       }, [props.formFields]);
     
-    const updateLandmark = () => {
+    // const updateLandmark = () => {
 
-    }
+    // }
     
     const rows = []
 

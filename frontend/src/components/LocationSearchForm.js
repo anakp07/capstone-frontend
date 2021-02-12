@@ -24,7 +24,10 @@ const LocationSearchForm = (props) => {
     props.setFormFields(updatedFormFields);
 
 }
-  
+
+const updateSelectedView= (selectedView) => {
+  props.setView(selectedView);
+}
   return (
     <div>
       <p>Please fill in your current location:</p>
@@ -56,11 +59,11 @@ const LocationSearchForm = (props) => {
       />
       </p>
       <div className="PlayerSubmissionForm__submit">
-          <input type="submit" value="Search by List" className="PlayerSubmissionForm__submit-btn"/>
+          <input type="submit" value="Search by List" onClick={() => updateSelectedView('list')} className="PlayerSubmissionForm__submit-btn"/>
           {/* <input type="submit" value="Search by List" className="PlayerSubmissionForm__submit-btn" setLocation='true'/> */}
       </div>
       <div className="PlayerSubmissionForm__submit">
-          <input type="submit" value="Search by Map" className="PlayerSubmissionForm__submit-btn"/>
+          <input type="submit" value="Search by Map" onClick={() => updateSelectedView('map')} className="PlayerSubmissionForm__submit-btn"/>
           {/* <input type="submit" value="Search by List" className="PlayerSubmissionForm__submit-btn" setLocation='true'/> */}
       </div>
       </form>
