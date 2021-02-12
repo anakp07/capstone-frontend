@@ -17,7 +17,7 @@ const LocationSearch = (props) => {
       <div>
         <LocationSearchForm formFields={props.formFields} setFormFields={props.setFormFields}/> 
         {/* <LocationSearchForm isLocationSubmitted={props.isLocationSubmitted} setLocation={props.setLocation} formFields={props.formFields} setFormFields={props.setFormFields}/>  */}
-        {isSearchComplete(props.formFields) && <ListView formFields={props.formFields}/> }
+        {isSearchComplete(props.formFields) && <ListView formFields={props.formFields} selectedLandmark={props.selectedLandmark} setSelectedLandmark={props.setSelectedLandmark}/> }
       </div>   
     )
 };

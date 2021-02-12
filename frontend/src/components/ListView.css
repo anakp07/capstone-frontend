@@ -6,6 +6,7 @@ img {
 }
 
 .landmarkName {
+  height: 40%
 }
 
 
@@ -14,16 +15,23 @@ img {
   flex-wrap: wrap;
 }
 
-.flex-item-left {
+.landmarkNameAndLinkContainer {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+
+/* .flex-item-left {
+    width: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 10%;
-}
+    flex: 30%;
+} */
 
-.flex-item-right {
-  flex: 90%;
-}
+/* .flex-item-right {
+  flex: 70%;
+} */
 
 td {
     padding: 25px;
@@ -32,3 +40,24 @@ td {
 td .images {
     justify-content: right;
 }
+
+/* link:visited {
+  color:#00FF00;
+}
+
+link:hover {
+  color:#FF00FF;
+} */
+
+.landmarkName {
+  font-size: 1.75em;
+  color: #C13584;
+  font-weight: bold;
+}
+
+.link {
+  font-size: 1em;
+  color: #C13584 !important;
+  font-weight: bold;
+}
+
