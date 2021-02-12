@@ -57,10 +57,10 @@ const ListView = (props) => {
             <tbody>
              <tr className="flex-container">
              {/* <td className="flex-item-left"><Link to="/listperspectiveview" className="landmarkName" landmarkSelected={landmark} formFields={props.formFields}>{landmark}</Link></td> */}
-             <td className="flex-item-left">
+             <td className="landmarkNameAndLinkContainer">
                <div className="landmarkName">{landmark}</div>
                {/* <div className="flex-item-left" onClick={updateSelectedLandmark(landmark)}><Link to="/listperspectiveview" >Click here for all the best perspectives!</Link></div>  */}
-               <div className="flex-item-left" onClick={() => updateSelectedLandmark(landmark)}><Link to="/listperspectiveview" >Click here for all the best perspectives!</Link></div> 
+               <div onClick={() => updateSelectedLandmark(landmark)}><Link to="/listperspectiveview" className="link" > Click here for all the best perspectives!</Link></div> 
             </td>
             
             {/* <td className="flex-item-left"><Link to="/listperspectiveview" landmarkSelected={landmark} formFields={props.formFields}>Click here for all the best perspectives!</Link></td> */}
@@ -85,7 +85,7 @@ const ListView = (props) => {
 
     return (
         <div className="ListView">
-        <p>List View - Results for {props.formFields.city}, {props.formFields.state}, {props.formFields.country}:</p>
+        {/* <p>List View - Results for {props.formFields.city}, {props.formFields.state}, {props.formFields.country}:</p> */}
         {errorMessage ? <div><h2 className="error-msg">{errorMessage}</h2></div> : ''}
         {/* {PhotoComponents} */}
         {rows}

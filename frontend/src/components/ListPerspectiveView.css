@@ -1,4 +1,4 @@
-img {
+/* img {
     float: left;
     width:  200px;
     height: 200px;
@@ -31,4 +31,64 @@ td {
 
 td .images {
     justify-content: right;
+} */
+
+
+img {
+  float: left;
+  width:  200px;
+  height: 200px;
+  object-fit: cover;
 }
+
+.flex-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+.perspectiveNameAndLinkContainer {
+display: flex;
+flex-direction: column;
+width: 20%;
+}
+
+/* .flex-item-left {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 30%;
+} */
+
+/* .flex-item-right {
+flex: 70%;
+} */
+
+td {
+  padding: 25px;
+}
+
+td .images {
+  justify-content: right;
+}
+
+/* link:visited {
+color:#00FF00;
+}
+
+link:hover {
+color:#FF00FF;
+} */
+
+.perspectiveName {
+font-size: 1.5em;
+color: #C13584;
+font-weight: bold;
+}
+
+/* .link {
+font-size: 1em;
+color: #C13584 !important;
+font-weight: bold;
+} */
+

@@ -74,7 +74,11 @@ const ListPerspectiveView = (props) => {
         <div key = {perspective}>
           <table>
             <tr class="flex-container">
-             <td className="flex-item-left ">{perspective}</td> 
+             <td className="perspectiveNameandLinkContainer">
+               <div className="perspectiveName">
+                {perspective}
+                </div>
+              </td> 
              <td className="flex-item-right">{listImages}</td>
             </tr>
           </table>
@@ -84,7 +88,7 @@ const ListPerspectiveView = (props) => {
 
     return (
         <div className="ListView">
-        <h3>List View</h3>
+        {/* <h3>List View</h3> */}
         {errorMessage ? <div><h2 className="error-msg">{errorMessage}</h2></div> : ''}
         {rows}
         </div>
