@@ -49,7 +49,7 @@ flex-wrap: wrap;
 .perspectiveNameAndLinkContainer {
 display: flex;
 flex-direction: column;
-width: 20%;
+width: 40%;
 }
 
 /* .flex-item-left {
