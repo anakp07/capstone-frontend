@@ -38,12 +38,12 @@ const MapView = (props) => {
     
     const [center, setCenter] = useState({lat: 0,lng: 0});
 
-    const [zoom, setZoom] = useState(11);
+    const [zoom, setZoom] = useState(14);
 
     return (
         <div className="flexbox-wrap-container">
-            <div className="flexbox-left">LIST OF LANDMARKS </div>
-            <div className="flexbox-right"> ALL LANDMARKS - MAP VIEW 
+            <div className="flexbox-left"><h3>LIST OF LANDMARKS</h3></div>
+            <div className="flexbox-right"> <h3>LANDMARKS - MAP VIEW</h3>
                 {(photoList.length > 0)&& (
                 <GoogleMapReact
                     bootstrapURLKeys={{ apiKey: process.env.REACT_APP_API_KEY}}
