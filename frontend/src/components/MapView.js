@@ -44,12 +44,11 @@ const MapView = (props) => {
     return (
         <div className="flexbox-wrap-container">
             <div className="flexbox-left"><h3>LIST OF PERSPECTIVES</h3>
-            {/* <h4> Arc de Triomphe</h4>
             <ul>
-                <li> Avenue-de-la-Grande-Armee</li>
-                <li> Champs-Elysees</li>
-                <li> Place-du-General-Brocard</li>
-            </ul>  */}
+                {photoList.map(photo =>  
+                <li>Photo ID: {photo.photo_id} Perspective: {photo.perspective}</li>
+                )};
+            </ul>
             </div>
             <div className="flexbox-right"> <h3>LANDMARKS - MAP VIEW</h3>
                 {(photoList.length > 0)&& (
@@ -77,3 +76,10 @@ const MapView = (props) => {
 }
 
 export default MapView;
+
+// <h4> Arc de Triomphe</h4>
+            // <ul>
+            //     <li> Avenue-de-la-Grande-Armee</li>
+            //     <li> Champs-Elysees</li>
+            //     <li> Place-du-General-Brocard</li>
+            // </ul> 
