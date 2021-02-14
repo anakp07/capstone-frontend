@@ -85,7 +85,7 @@ const ListView = (props) => {
     //     })  
 
     return (
-        <div className="ListView">
+        <div className="listView">
         {/* <p>List View - Results for {props.formFields.city}, {props.formFields.state}, {props.formFields.country}:</p> */}
         {errorMessage ? <div><h2 className="error-msg">{errorMessage}</h2></div> : ''}
         {/* {PhotoComponents} */}

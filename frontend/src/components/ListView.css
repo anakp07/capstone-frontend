@@ -21,6 +21,7 @@ img {
   width: 10%;
 }
 
+
 /* .flex-item-left {
     width: 10%;
     display: flex;
@@ -57,7 +58,9 @@ link:hover {
 
 .link {
   font-size: 1em;
-  color: #C13584 !important;
+  color: black !important;
   font-weight: bold;
+  font-family: 'Caveat', cursive;
+  font-family: 'Rancho', cursive;
 }
 

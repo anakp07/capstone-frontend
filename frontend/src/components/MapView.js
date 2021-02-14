@@ -29,7 +29,7 @@ const MapView = (props) => {
     for (const landmark in landmarksNames){
         const listPerspectives = landmarksNames[landmark]
         rows.push(
-          <div ckey = {landmark}>
+          <div key = {landmark}>
             <table>
                <tr className="flex-container">
                 <td className="landmarkNameAndLinkContainer">
@@ -82,7 +82,7 @@ const MapView = (props) => {
 
     return (
         <div className="flexbox-wrap-container">
-            <div className="flexbox-left"><h3>List View Perspectives</h3>
+            <div className="flexbox-left"> <h3>List View Perspectives</h3>
             {/* <ul>
                 {photoList.map(photo =>  
                 <li>Photo ID: {photo.photo_id} Perspective: {photo.perspective}</li>
@@ -107,7 +107,7 @@ const MapView = (props) => {
                                     lng={photo.longitude}
                                     landmark={photo.landmark}
                                     perspective={photo.perspective}
-                                    color="red"
+                                    color="IndianRed"
 
                                 />
                             )
