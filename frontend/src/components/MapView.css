@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Rancho&display=swap');
+
+h2{
+    font-family: 'Caveat', cursive;
+    font-family: 'Rancho', cursive;
+}
+
 .flexbox-wrap-container {
     display: flex;
 }
@@ -13,7 +20,7 @@
     height: 1000px;
     width: auto;
     flex-direction: row;
-    justify-content: center
+    justify-content: center;
 }   
 
 .flexbox-right{
@@ -21,6 +28,21 @@
     height: 1000px;
     width: auto;
     flex-direction: row;
+    font-family: 'Caveat', cursive;
+    font-family: 'Rancho', cursive;
 
 }
 
+.flexbox-left h3{
+    font-family: 'Caveat', cursive;
+    font-family: 'Rancho', cursive;
+}
+
+.perspectiveName{
+    justify-content: center;
+  }
+
+.landmarkName{
+    font-family: 'Caveat', cursive;
+    font-family: 'Rancho', cursive;
+}

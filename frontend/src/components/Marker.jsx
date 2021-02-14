@@ -9,7 +9,7 @@ const Marker = (props: any) => {
             <div className="pin bounce"
             style={{ backgroundColor: color, cursor: 'pointer'}}
             />
-            {landmark}
+            {/* {landmark} */}
             {perspective}
             <div className="pulse" />
         </div> 

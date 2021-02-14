@@ -50,6 +50,8 @@ flex-wrap: wrap;
 display: flex;
 flex-direction: column;
 width: 40%;
+font-family: 'Caveat', cursive;
+font-family: 'Rancho', cursive;
 }
 
 /* .flex-item-left {

@@ -29,7 +29,7 @@ const MapView = (props) => {
     for (const landmark in landmarksNames){
         const listPerspectives = landmarksNames[landmark]
         rows.push(
-          <div key = {landmark}>
+          <div ckey = {landmark}>
             <table>
                <tr className="flex-container">
                 <td className="landmarkNameAndLinkContainer">
@@ -82,7 +82,7 @@ const MapView = (props) => {
 
     return (
         <div className="flexbox-wrap-container">
-            <div className="flexbox-left"><h3>LIST OF PERSPECTIVES</h3>
+            <div className="flexbox-left"><h3>List View Perspectives</h3>
             {/* <ul>
                 {photoList.map(photo =>  
                 <li>Photo ID: {photo.photo_id} Perspective: {photo.perspective}</li>
@@ -91,7 +91,7 @@ const MapView = (props) => {
             {rows}
 
             </div>
-            <div className="flexbox-right"> <h3>LANDMARKS - MAP VIEW</h3>
+            <div className="flexbox-right"> <h3>Map View Perspectives</h3>
                 {(photoList.length > 0)&& (
                 <GoogleMapReact
                     bootstrapURLKeys={{ apiKey: process.env.REACT_APP_API_KEY}}
@@ -107,7 +107,7 @@ const MapView = (props) => {
                                     lng={photo.longitude}
                                     landmark={photo.landmark}
                                     perspective={photo.perspective}
-                                    color="blue"
+                                    color="red"
 
                                 />
                             )

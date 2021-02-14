@@ -18,25 +18,25 @@ return (
     <h3>Instagrammable Spots</h3>
         <ul className="nav-links">
             <li>
-                <p><Link to="/home" className="nav-text">Home</Link></p>
+                <h4><Link to="/home" className="nav-text">Home</Link></h4>
             </li>
             <li>
-                <p><Link to="/locationsearch" className="nav-text">Location Search</Link></p>
+                <h4><Link to="/locationsearch" className="nav-text">Location Search</Link></h4>
             </li>
             <li>
-                <p><Link to="/addpicture" className="nav-text">Add a Picture</Link></p>
+                <h4><Link to="/addpicture" className="nav-text">Add a Picture</Link></h4>
             </li>
             <li>
-                <p className="location">{isSearchComplete(props.formFields) && `Location: ${props.formFields.city}, ${props.formFields.state}, ${props.formFields.country}:`}</p>
+                <h4 className="location">{isSearchComplete(props.formFields) && `Location: ${props.formFields.city}, ${props.formFields.state}, ${props.formFields.country}`}</h4>
             </li>
             <li>
-                <p>{isSearchComplete(props.formFields) && <Link to="/listview" className="nav-text">ListView</Link>}</p>
+                <h4>{isSearchComplete(props.formFields) && <Link to="/listview" className="nav-text">ListView</Link>}</h4>
             </li>
             <li>
-                <p>{isSearchComplete(props.formFields) && <Link to="/mapview" className="nav-text">MapView</Link>}</p>
+                <h4>{isSearchComplete(props.formFields) && <Link to="/mapview" className="nav-text">MapView</Link>}</h4>
             </li>
             <li>
-                <p><Link to="/login" className="nav-text">Login</Link></p>
+                <h4><Link to="/login" className="nav-text">Login</Link></h4>
             </li>
             
             

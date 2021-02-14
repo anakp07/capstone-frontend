@@ -30,7 +30,7 @@ const updateSelectedView= (selectedView) => {
 }
   return (
     <div>
-      <p>Please fill in your current location:</p>
+      <h5>Please fill in your current location:</h5>
       <form onSubmit={onSubmission}>
       <p><input 
       placeholder="Country"

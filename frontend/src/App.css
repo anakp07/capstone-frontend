@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Rancho&display=swap');
+
+nav h3{
+  font-family: 'Caveat', cursive;
+  font-family: 'Cookie', cursive;
+}
+
+nav h4{
+  font-family: 'Caveat', cursive;
+  font-family: 'Rancho', cursive;
+}
+
+nav p{
+  font-family: 'Caveat', cursive;
+  font-family: 'Rancho', cursive; 
+}
+
+
+
+
 .App {
   text-align: center;
 }
