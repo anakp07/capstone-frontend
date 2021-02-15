@@ -108,7 +108,6 @@ const MapView = (props) => {
                                     landmark={photo.landmark}
                                     perspective={photo.perspective}
                                     color="IndianRed"
-
                                 />
                             )
                         })}           
