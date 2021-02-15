@@ -42,7 +42,7 @@ const updateSelectedView= (selectedView) => {
       </p>
       <p>
        <input 
-      placeholder="State or Department"
+      placeholder="State/Department/Province"
       type="text"
       name="state"
       onChange={onInput}
