@@ -38,8 +38,8 @@ const MapView = (props) => {
                {/* <td className="flex-item-right">{listPerspectives}</td> */}
                <td>
                <ul>
-                {listPerspectives.map(perspective =>  
-                <li><p>{perspective}</p></li>
+                {listPerspectives.map(perspective =>
+                <li><p className={ props.selectedPerspective === perspective ? "selected" : "notSelected"}>{perspective}</p></li>
                 )}
             </ul> 
                </td>
@@ -82,7 +82,7 @@ const MapView = (props) => {
 
     return (
         <div className="flexbox-wrap-container">
-            <div>selected perspective: {props.selectedPerspective}</div>
+            {/* <div>selected perspective: {props.selectedPerspective}</div> */}
             <div className="flexbox-left"> <h3>List View Perspectives</h3>
             {/* <ul>
                 {photoList.map(photo =>  

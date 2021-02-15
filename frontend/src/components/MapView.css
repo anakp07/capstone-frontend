@@ -46,3 +46,7 @@ h2{
     font-family: 'Caveat', cursive;
     font-family: 'Rancho', cursive;
 }
+
+li .selected {
+    background-color: plum;
+}
