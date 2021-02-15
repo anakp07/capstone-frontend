@@ -22,6 +22,7 @@ class AddPictureForm extends React.Component {
             photo_url: '',
             sendingRequest: false,
             submited: false,
+            result: '',
         }
         this.changePhotoId= this.changePhotoId.bind(this)
         this.changeCountry = this.changeCountry.bind(this)
@@ -126,10 +127,12 @@ class AddPictureForm extends React.Component {
             user_id: this.state.user_id,
             photo_url: this.state.photo_url,
 
-        }).then(res => {
+        }
+        ).then(res => {
             if (res.data && res.data._id) {
                 this.setState({
-                    subscription: true
+                    subscription: true,
+                    result: "Your photo has been successfully uploaded!"
                 })
             } else {
                 alertService.showError('Subscription failed!')
@@ -150,6 +153,7 @@ class AddPictureForm extends React.Component {
                         submited={this.state.submited}
                     />
                 ) : (
+                    <>
                     <SubmitForm
                         photo_id={this.state.photo_id}
                         country={this.state.country}
@@ -176,7 +180,12 @@ class AddPictureForm extends React.Component {
                         submit={this.submit}
                         sendingRequest={this.state.sendingRequest}
                     />
+                    <div>
+                        {this.state.result}
+                    </div>
+                    </>
                 )}
+
             </div>
         )
     }
