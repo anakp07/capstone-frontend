@@ -82,6 +82,7 @@ const MapView = (props) => {
 
     return (
         <div className="flexbox-wrap-container">
+            <div>selected perspective: {props.selectedPerspective}</div>
             <div className="flexbox-left"> <h3>List View Perspectives</h3>
             {/* <ul>
                 {photoList.map(photo =>  

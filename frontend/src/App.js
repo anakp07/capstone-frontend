@@ -27,6 +27,8 @@ function App() {
     longitude: ''
   })
 
+  const [selectedPerspective, setSelectedPerspective] = useState('');
+
   // const [selectedLandmark, setSelectedLandmark] = useState('Notre Dame')
 
   // const [locationIsSubmitted, setLocation] = useState(false)
@@ -39,13 +41,13 @@ console.log("setSelectedLandmark:", setSelectedLandmark)
         <Switch>
           <Route exact path="/"/>
           <Route path="/home"><Home/></Route>
-          <Route path="/locationsearch"><LocationSearch formFields={formFields} setFormFields={setFormFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark}/></Route>
+          <Route path="/locationsearch"><LocationSearch formFields={formFields} setFormFields={setFormFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark} selectedPerspective={selectedPerspective} setSelectedPerspective={setSelectedPerspective}/></Route>
           {/* <Route path="/locationsearch"><LocationSearch locationIsSubtmitted={locationIsSubmitted} setLocation={setLocation} formFields={formFields} setFormFields={setFormFields}/></Route> */}
           <Route path="/login"><Login/></Route>
           <Route path="/addpicture"><AddPicture/></Route>
           <Route path="/listview"><ListView formFields={formFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark}/></Route>
-          <Route path="/mapview"><MapView formFields={formFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark}/></Route>
-          <Route path="/listperspectiveview"><ListPerspectiveView formFields={formFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark}/></Route>
+          <Route path="/mapview"><MapView formFields={formFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark} selectedPerspective={selectedPerspective} setSelectedPerspective={setSelectedPerspective}/></Route>
+          <Route path="/listperspectiveview"><ListPerspectiveView formFields={formFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark} selectedPerspective={selectedPerspective} setSelectedPerspective={setSelectedPerspective}/></Route>
 
         </Switch>
         {/* {locationIsSubmitted && {formFields.country}} */}

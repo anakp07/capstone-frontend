@@ -41,6 +41,9 @@ const ListPerspectiveView = (props) => {
     }, [props.formFields]);
     
     const rows = []
+    const updateSelectedPerspective= (perspectiveName) => {
+      props.setSelectedPerspective(perspectiveName)
+    }
 
     for (const perspective in perspectives){
       const listImages = perspectives[perspective]
@@ -52,7 +55,7 @@ const ListPerspectiveView = (props) => {
                <div className="perspectiveName">
                 {perspective}
                 </div>
-                <div>
+                <div onClick={() => updateSelectedPerspective(perspective)}>
                   <Link to="/mapview" className="link" > Click to see it on the map!</Link>
                 </div> 
               </td> 
