@@ -10,7 +10,7 @@ class AddPictureForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            photo_id: null,
+            // photo_id: null,
             country: '',
             state: '',
             city: '',
@@ -24,7 +24,7 @@ class AddPictureForm extends React.Component {
             submited: false,
             result: '',
         }
-        this.changePhotoId= this.changePhotoId.bind(this)
+        // this.changePhotoId= this.changePhotoId.bind(this)
         this.changeCountry = this.changeCountry.bind(this)
         this.changeState = this.changeState.bind(this)
         this.changeCity = this.changeCity.bind(this)
@@ -38,10 +38,10 @@ class AddPictureForm extends React.Component {
         this.submit = this.submit.bind(this)
     }
 
-    changePhotoId(e) {
-        let photo_id = e.target.value
-        this.setState({photo_id})
-    }
+    // changePhotoId(e) {
+    //     let photo_id = e.target.value
+    //     this.setState({photo_id})
+    // }
 
     changeCountry(e) {
         let country = e.target.value
@@ -85,9 +85,9 @@ class AddPictureForm extends React.Component {
         this.setState({
             sendingRequest: true
         })
-        if (!this.state.photo_id) {
-            return alertService.showError('Please input photo id!')
-        }
+        // if (!this.state.photo_id) {
+        //     return alertService.showError('Please input photo id!')
+        // }
         if (!this.state.country) {
             return alertService.showError('Please input country!')
         }
@@ -116,7 +116,7 @@ class AddPictureForm extends React.Component {
             return alertService.showError('Please input photo_url!')
         }
         Axios.post(`${API_HOST}/photos`, {
-            photo_id: this.state.photo_id,
+            // photo_id: this.state.photo_id,
             country: this.state.country,
             state: this.state.state,
             city: this.state.city,
@@ -132,7 +132,7 @@ class AddPictureForm extends React.Component {
             if (res.data && res.data._id) {
                 this.setState({
                     subscription: true,
-                    result: "Your photo has been successfully uploaded!"
+                    result: "Your photo hash been successfully uploaded!"
                 })
             } else {
                 alertService.showError('Subscription failed!')
@@ -155,7 +155,7 @@ class AddPictureForm extends React.Component {
                 ) : (
                     <>
                     <SubmitForm
-                        photo_id={this.state.photo_id}
+                        // photo_id={this.state.photo_id}
                         country={this.state.country}
                         state={this.state.state}
                         city={this.state.city}
@@ -166,7 +166,7 @@ class AddPictureForm extends React.Component {
                         user_id={this.state.user_id}
                         photo_url={this.state.photo_url}
                         
-                        changePhotoId={this.changePhotoId}
+                        // changePhotoId={this.changePhotoId}
                         changeCountry={this.changeCountry}
                         changeState={this.changeState}
                         changeCity={this.changeCity}

@@ -11,7 +11,7 @@ class SubmitForm extends React.Component {
             <div className="row mt-5 justify-content-center">
                 <div className="col-12 col-lg-6 border border-1 p-4">
                     <form className="">
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label className="col-form-label">Photo Id</label>
                             <input
                                 className="form-control"
@@ -19,7 +19,7 @@ class SubmitForm extends React.Component {
                                 placeholder="Please input the photo id"
                                 value={this.props.photo_id}
                                 onChange={this.props.changePhotoId}/>
-                        </div>
+                        </div> */}
                         <div className="form-group">
                             <label className="col-form-label">Country</label>
                             <input

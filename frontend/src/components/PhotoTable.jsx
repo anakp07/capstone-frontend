@@ -33,7 +33,7 @@ class PhotoTable extends React.Component {
                     <table className="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Photo Id</th>
+                                {/* <th>Photo Id</th> */}
                                 <th>Country</th>
                                 <th>State</th>
                                 <th>City</th>
@@ -54,7 +54,7 @@ class PhotoTable extends React.Component {
                                     return (
                                         <tr key={index}>
                                             {/* <thd>{index+1}</thd> */}
-                                            <td>{photo.photo_id}</td>
+                                            {/* <td>{photo.photo_id}</td> */}
                                             <td>{photo.country}</td>
                                             <td>{photo.state}</td>
                                             <td>{photo.city}</td>
