@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 // import PropTypes from 'prop-types';
 import './ListPerspectiveView.css';
+import {Link} from 'react-router-dom';
 
 const ListPerspectiveView = (props) => {
     const API_URL_BASE = 'http://localhost:3000/photos';
@@ -78,6 +79,9 @@ const ListPerspectiveView = (props) => {
                <div className="perspectiveName">
                 {perspective}
                 </div>
+                <div>
+                  <Link to="/mapview" className="link" > Click to see it on the map!</Link>
+                </div> 
               </td> 
              <td className="flex-item-right">{listImages}</td>
             </tr>
