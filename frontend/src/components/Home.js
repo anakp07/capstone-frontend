@@ -22,6 +22,7 @@ import CameraAlt from '@material-ui/icons/CameraAlt';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
+import './ListView.css';
 
 function Copyright() {
   return (
@@ -85,7 +86,7 @@ export default function Home() {
           <div component="h1" variant="h5">
             Are you ready for your next adventure? 
           </div>
-          <Link to="/locationsearch"><Button
+          <Link className="linkToSearch" to="/locationsearch"><Button
               type="submit"
               fullWidth
               variant="contained"

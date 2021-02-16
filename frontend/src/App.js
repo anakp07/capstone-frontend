@@ -39,7 +39,7 @@ console.log("setSelectedLandmark:", setSelectedLandmark)
       <div>
         <Nav formFields={formFields}/>
         <Switch>
-          <Route exact path="/"/>
+          <Route exact path="/"><Home/></Route>
           <Route path="/home"><Home/></Route>
           <Route path="/locationsearch"><LocationSearch formFields={formFields} setFormFields={setFormFields} selectedLandmark={selectedLandmark} setSelectedLandmark={setSelectedLandmark} selectedPerspective={selectedPerspective} setSelectedPerspective={setSelectedPerspective}/></Route>
           {/* <Route path="/locationsearch"><LocationSearch locationIsSubtmitted={locationIsSubmitted} setLocation={setLocation} formFields={formFields} setFormFields={setFormFields}/></Route> */}

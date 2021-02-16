@@ -36,7 +36,7 @@ return (
                 <h4>{isSearchComplete(props.formFields) && <Link to="/mapview" className="nav-text">MapView</Link>}</h4>
             </li>
             <li>
-                <h4><Link to="/login" className="nav-text">Login</Link></h4>
+                {/* <h4><Link to="/login" className="nav-text">Login</Link></h4> */}
             </li>
             
             
