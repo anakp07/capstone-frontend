@@ -4,9 +4,13 @@ class SubmitForm extends React.Component {
 
     constructor(props) {
         super(props)
+        console.log(props)
     }
 
+    componentDidUpdate(props) {console.log(props)}
+
     render() {
+
         return (
             <div className="row mt-5 justify-content-center">
                 <div className="col-12 col-lg-6 border border-1 p-4">
@@ -97,7 +101,7 @@ class SubmitForm extends React.Component {
                         <input
                             className="form-control"
                             type="text"
-                            placeholder="Please input the photo url"
+                            placeholder={this.props.photo_url}
                             value={this.props.photo_url}
                             onChange={this.props.changePhotoUrl}/>
                     </div>
