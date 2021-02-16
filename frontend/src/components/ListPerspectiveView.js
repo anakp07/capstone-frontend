@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-// import PropTypes from 'prop-types';
 import './ListPerspectiveView.css';
 import {Link} from 'react-router-dom';
 
@@ -13,20 +12,6 @@ const ListPerspectiveView = (props) => {
     const [photoList, setPhotoList] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
     const [perspectives, setPerspectives] = useState({});
-    // const [selectedLandmark, setSelectedLandmark] = useState(props.selectedLandmark);
-    
-    // const perspectivesRetriever = (photoList, props.selectedLandmark) => {
-    //   const newPerspectives = {};
-    //   photoList.forEach((photo) => {
-    //     if (photo.landmark === props.selectedLandmark.landmark && !newPerspectives[photo.perspective]){
-    //       newPerspectives[photo.perspective] = []
-    //     }
-    //     if (photo.landmark === props.selectedLandmark.landmark && newPerspectives[photo.perspective].length < 5){
-    //     newPerspectives[photo.perspective].push(<img key = {photo.photo_id} src = {photo.photo_url} alt={photo.perspective} />)
-    //     }
-    //   }) 
-    //   setPerspectives(newPerspectives);
-    // }
 
     const perspectivesRetriever = (photoList) => {
       const newPerspectives = {};
@@ -41,22 +26,10 @@ const ListPerspectiveView = (props) => {
       setPerspectives(newPerspectives);
     }
 
-    // useEffect(() => {
-    //     axios.get(API_URL_BASE + '/searchlocation/' + props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city)
-    //       .then((response) => {
-    //         setPhotoList(response.data);
-    //         perspectivesRetriever(response.data);
-    //       })
-    //       .catch((error) => {
-    //         setErrorMessage(error.message);
-    //       });
-          
-    //   }, [props.formFields]);
     useEffect(() => {
       axios.get(API_URL_BASE + '/searchlocation/' + props.formFields.country + '/' + props.formFields.state + '/' + props.formFields.city)
         .then((response) => {
           setPhotoList(response.data);
-          // perspectivesRetriever(response.data, props.selectedLandmark);
           perspectivesRetriever(response.data);
 
         })
@@ -68,6 +41,9 @@ const ListPerspectiveView = (props) => {
     }, [props.formFields]);
     
     const rows = []
+    const updateSelectedPerspective= (perspectiveName) => {
+      props.setSelectedPerspective(perspectiveName)
+    }
 
     for (const perspective in perspectives){
       const listImages = perspectives[perspective]
@@ -79,7 +55,7 @@ const ListPerspectiveView = (props) => {
                <div className="perspectiveName">
                 {perspective}
                 </div>
-                <div>
+                <div onClick={() => updateSelectedPerspective(perspective)}>
                   <Link to="/mapview" className="link" > Click to see it on the map!</Link>
                 </div> 
               </td> 
@@ -92,7 +68,6 @@ const ListPerspectiveView = (props) => {
 
     return (
         <div className="ListView">
-        {/* <h3>List View</h3> */}
         {errorMessage ? <div><h2 className="error-msg">{errorMessage}</h2></div> : ''}
         {rows}
         </div>

@@ -38,8 +38,10 @@ const MapView = (props) => {
                {/* <td className="flex-item-right">{listPerspectives}</td> */}
                <td>
                <ul>
-                {listPerspectives.map(perspective =>  
-                <li><p>{perspective}</p></li>
+                {listPerspectives.map(perspective =>
+                // <li><p className="landmarkName" onMouseOver={updatePerspectiveSelectedByHovering(perspective)} className={ props.selectedPerspective === perspective ? "selected" : "notSelected"}>{perspective}</p></li>
+                <li><p className="landmarkName" onMouseOver={() => updatePerspectiveSelectedByHovering(perspective)} className={ props.selectedPerspective === perspective ? "selected" : "notSelected"}>{perspective}</p></li>
+
                 )}
             </ul> 
                </td>
@@ -80,6 +82,10 @@ const MapView = (props) => {
 
     const [zoom, setZoom] = useState(14);
 
+    function updatePerspectiveSelectedByHovering(selection){
+        props.setSelectedPerspective(selection)
+      }
+
     return (
         <div className="flexbox-wrap-container">
             <div className="flexbox-left"> <h3>List View Perspectives</h3>
@@ -107,7 +113,14 @@ const MapView = (props) => {
                                     lng={photo.longitude}
                                     landmark={photo.landmark}
                                     perspective={photo.perspective}
+<<<<<<< HEAD
                                     color="IndianRed"
+=======
+                                    // onMouseOver={() => updatePerspectiveSelectedByHovering(photo.perspective)}
+                                    onMouseOver={() => updatePerspectiveSelectedByHovering(photo.perspective)}
+                                    color={ (props.selectedPerspective === photo.perspective) ? "yellow" : "#DD2476"}
+
+>>>>>>> refs/remotes/origin/main
                                 />
                             )
                         })}           
