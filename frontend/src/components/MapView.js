@@ -83,13 +83,11 @@ const MapView = (props) => {
     const [zoom, setZoom] = useState(14);
 
     function updatePerspectiveSelectedByHovering(selection){
-        // e.target.style.background = "yellow";
         props.setSelectedPerspective(selection)
       }
 
     return (
         <div className="flexbox-wrap-container">
-            {/* <div>selected perspective: {props.selectedPerspective}</div> */}
             <div className="flexbox-left"> <h3>List View Perspectives</h3>
             {/* <ul>
                 {photoList.map(photo =>  
@@ -115,7 +113,8 @@ const MapView = (props) => {
                                     lng={photo.longitude}
                                     landmark={photo.landmark}
                                     perspective={photo.perspective}
-                                    // color="IndianRed"
+                                    // onMouseOver={() => updatePerspectiveSelectedByHovering(photo.perspective)}
+                                    onMouseOver={() => updatePerspectiveSelectedByHovering(photo.perspective)}
                                     color={ (props.selectedPerspective === photo.perspective) ? "yellow" : "#DD2476"}
 
                                 />
