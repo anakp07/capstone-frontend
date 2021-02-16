@@ -10,6 +10,7 @@ img {
 display: flex;
 flex-wrap: wrap;
 margin-bottom: 5%;
+margin-right: 5%;
 }
 
 
@@ -19,13 +20,15 @@ margin-bottom: 5%;
   font-weight: bold;
   font-family: 'Caveat', cursive;
   font-family: 'Rancho', cursive;
-  height: 40%
+  height: 20%
   }
 
 .landmarkNameAndLinkContainer {
 display: flex;
+flex: 0;
 flex-direction: column;
 width: 10%;
+padding: 2%;
 }
 
 .link {
@@ -35,17 +38,3 @@ font-weight: bold;
 font-family: 'Caveat', cursive;
 font-family: 'Rancho', cursive;
 }
-
-/* td {
-  padding: 25px;
-}
-td .images {
-  justify-content: right;
-  padding: 25px;
-} */
-/* link:visited {
-color:#00FF00;
-}
-link:hover {
-color:#FF00FF;
-} */
