@@ -6,6 +6,7 @@ nav {
     /* background: #C13584; */
     background-image: linear-gradient(to right, #FF512F 0%, #DD2476  51%, #FF512F  100%);
     color: white;
+    margin-bottom: 5%;
     }
 .nav-links {
     width: 100%;

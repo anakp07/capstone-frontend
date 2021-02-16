@@ -47,18 +47,18 @@ const ListView = (props) => {
       const listImages = landmarksNames[landmark]
       rows.push(
         <div key = {landmark}>
-          <table>
-             <tr className="flex-container">
+          
+             <div className="flex-container">
              {/* <td className="flex-item-left"><Link to="/listperspectiveview" className="landmarkName" landmarkSelected={landmark} formFields={props.formFields}>{landmark}</Link></td> */}
-             <td className="landmarkNameAndLinkContainer">
+             <div className="landmarkNameAndLinkContainer">
                <div className="landmarkName">{landmark}</div>
                {/* <div className="flex-item-left" onClick={updateSelectedLandmark(landmark)}><Link to="/listperspectiveview" >Click here for all the best perspectives!</Link></div>  */}
                <div onClick={() => updateSelectedLandmark(landmark)}><Link to="/listperspectiveview" className="link" > Click here for all the best perspectives!</Link></div>
-            </td>
+            </div>
             {/* <td className="flex-item-left"><Link to="/listperspectiveview" landmarkSelected={landmark} formFields={props.formFields}>Click here for all the best perspectives!</Link></td> */}
-             <td className="flex-item-right">{listImages}</td>
-            </tr>
-          </table>
+             <div className="flex-item-right">{listImages}</div>
+            </div>
+        
         </div>
       )
     }
