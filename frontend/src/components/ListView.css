@@ -1,55 +1,44 @@
 img {
-    float: left;
-    width:  200px;
-    height: 200px;
-    object-fit: cover;
+  float: left;
+  width:  200px;
+  height: 200px;
+  object-fit: cover;
 }
-
 .landmarkName {
-  height: 40%
+height: 40%
 }
-
-
 .flex-container {
-  display: flex;
-  flex-wrap: wrap;
+display: flex;
+flex-wrap: wrap;
 }
-
 .landmarkNameAndLinkContainer {
-  display: flex;
-  flex-direction: column;
-  width: 10%;
+display: flex;
+flex-direction: column;
+width: 10%;
 }
-
 td {
-    padding: 25px;
-  }
-
+  padding: 25px;
+}
 td .images {
-    justify-content: right;
+  justify-content: right;
 }
-
 /* link:visited {
-  color:#00FF00;
+color:#00FF00;
 }
-
 link:hover {
-  color:#FF00FF;
+color:#FF00FF;
 } */
-
 .landmarkName {
-  font-size: 1.75em;
-  color: #C13584;
-  font-weight: bold;
-  font-family: 'Caveat', cursive;
-  font-family: 'Rancho', cursive;
+font-size: 1.75em;
+color: #C13584;
+font-weight: bold;
+font-family: 'Caveat', cursive;
+font-family: 'Rancho', cursive;
 }
-
 .link {
-  font-size: 1em;
-  color: black !important;
-  font-weight: bold;
-  font-family: 'Caveat', cursive;
-  font-family: 'Rancho', cursive;
+font-size: 1em;
+color: black !important;
+font-weight: bold;
+font-family: 'Caveat', cursive;
+font-family: 'Rancho', cursive;
 }
-
