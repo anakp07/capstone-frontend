@@ -43,7 +43,6 @@ h2{
     width: 50%;
     font-family: 'Caveat', cursive;
     font-family: 'Rancho', cursive;
-<<<<<<< HEAD
     align-items: center;
     /* justify-content: center; */
 }
@@ -54,10 +53,7 @@ h2{
     justify-content: center;
     align-items: center;
 }
-=======
-}
 
 li .selected {
     background-color: yellow;
 }
->>>>>>> refs/remotes/origin/main
