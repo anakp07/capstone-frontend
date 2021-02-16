@@ -39,7 +39,9 @@ const MapView = (props) => {
                <td>
                <ul>
                 {listPerspectives.map(perspective =>
-                <li><p className={ props.selectedPerspective === perspective ? "selected" : "notSelected"}>{perspective}</p></li>
+                // <li><p className="landmarkName" onMouseOver={updatePerspectiveSelectedByHovering(perspective)} className={ props.selectedPerspective === perspective ? "selected" : "notSelected"}>{perspective}</p></li>
+                <li><p className="landmarkName" onMouseOver={() => updatePerspectiveSelectedByHovering(perspective)} className={ props.selectedPerspective === perspective ? "selected" : "notSelected"}>{perspective}</p></li>
+
                 )}
             </ul> 
                </td>
@@ -79,6 +81,11 @@ const MapView = (props) => {
     const [center, setCenter] = useState({lat: 0,lng: 0});
 
     const [zoom, setZoom] = useState(14);
+
+    function updatePerspectiveSelectedByHovering(selection){
+        // e.target.style.background = "yellow";
+        props.setSelectedPerspective(selection)
+      }
 
     return (
         <div className="flexbox-wrap-container">
