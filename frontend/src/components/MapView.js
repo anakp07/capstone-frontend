@@ -113,14 +113,10 @@ const MapView = (props) => {
                                     lng={photo.longitude}
                                     landmark={photo.landmark}
                                     perspective={photo.perspective}
-<<<<<<< HEAD
-                                    color="IndianRed"
-=======
                                     // onMouseOver={() => updatePerspectiveSelectedByHovering(photo.perspective)}
                                     onMouseOver={() => updatePerspectiveSelectedByHovering(photo.perspective)}
                                     color={ (props.selectedPerspective === photo.perspective) ? "yellow" : "#DD2476"}
 
->>>>>>> refs/remotes/origin/main
                                 />
                             )
                         })}           

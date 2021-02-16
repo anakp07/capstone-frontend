@@ -116,6 +116,7 @@ class AddPictureForm extends React.Component {
         if (!this.state.photo_url) {
             return alertService.showError('Please input photo_url!')
         }
+        console.log(this.state)
         Axios.post(`${API_HOST}/photos`, {
             // photo_id: this.state.photo_id,
             country: this.state.country,
@@ -126,14 +127,14 @@ class AddPictureForm extends React.Component {
             longitude: this.state.longitude,
             perspective: this.state.perspective,
             user_id: this.state.user_id,
-            photo_url: this.state.photoUrl,
+            photo_url: this.state.photo_url,
 
         }
         ).then(res => {
             if (res.data && res.data._id) {
                 this.setState({
                     subscription: true,
-                    result: "Your photo hash been successfully uploaded!"
+                    result: "Your photo has been successfully uploaded!"
                 })
             } else {
                 alertService.showError('Subscription failed!')
@@ -165,7 +166,7 @@ class AddPictureForm extends React.Component {
                         longitude={this.state.longitude}
                         perspective={this.state.perspective}
                         user_id={this.state.user_id}
-                        photo_url={this.props.photoUrl}
+                        photo_url={this.state.photo_url}
                         
                         // changePhotoId={this.changePhotoId}
                         changeCountry={this.changeCountry}
