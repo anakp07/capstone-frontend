@@ -15,7 +15,7 @@ const Nav = (props) => {
 
 return (
     <nav>
-    <h3>Instagrammable Spots</h3>
+    <h3> Instagrammable Spots of the World</h3>
         <ul className="nav-links">
             <li>
                 <h4><Link to="/home" className="nav-text">Home</Link></h4>
