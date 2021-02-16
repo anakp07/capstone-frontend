@@ -24,9 +24,9 @@ margin-right: 5%;
 .perspectiveNameAndLinkContainer {
   display: flex;
   flex: 0;
-flex-direction: column;
-width: 20%;
-padding: 2%;
+  flex-direction: column;
+  width: 20%;
+  padding: 2%;
 /* font-family: 'Caveat', cursive;
 font-family: 'Rancho', cursive; */
 }
