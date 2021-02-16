@@ -14,13 +14,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 // import TextField from '@material-ui/core/TextField';
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
 // import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import CameraAlt from '@material-ui/icons/CameraAlt';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -84,15 +85,16 @@ export default function Home() {
           <div component="h1" variant="h5">
             Are you ready for your next adventure? 
           </div>
-            <Button
+          <Link to="/locationsearch"><Button
               type="submit"
               fullWidth
               variant="contained"
               color="secondary"
               className={classes.submit}
             >
-              Enter a City 
+              Explore instagrammable spots in your location 
             </Button>
+            </Link>
             <Grid container>
             </Grid>
             <Box mt={5}>
