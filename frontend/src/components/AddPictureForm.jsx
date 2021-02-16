@@ -19,11 +19,12 @@ class AddPictureForm extends React.Component {
             longitude: null,
             perspective: '',
             user_id: null,
-            photo_url: '',
+            photo_url: props.photoUrl,
             sendingRequest: false,
             submited: false,
             result: '',
         }
+        console.log(props)
         // this.changePhotoId= this.changePhotoId.bind(this)
         this.changeCountry = this.changeCountry.bind(this)
         this.changeState = this.changeState.bind(this)
@@ -125,7 +126,7 @@ class AddPictureForm extends React.Component {
             longitude: this.state.longitude,
             perspective: this.state.perspective,
             user_id: this.state.user_id,
-            photo_url: this.state.photo_url,
+            photo_url: this.state.photoUrl,
 
         }
         ).then(res => {
@@ -164,7 +165,7 @@ class AddPictureForm extends React.Component {
                         longitude={this.state.longitude}
                         perspective={this.state.perspective}
                         user_id={this.state.user_id}
-                        photo_url={this.state.photo_url}
+                        photo_url={this.props.photoUrl}
                         
                         // changePhotoId={this.changePhotoId}
                         changeCountry={this.changeCountry}
