@@ -30,13 +30,13 @@ const MapView = (props) => {
         const listPerspectives = landmarksNames[landmark]
         rows.push(
           <div key = {landmark}>
-            <table>
-               <tr className="flex-container">
-                <td className="landmarkNameAndLinkContainer">
+            
+               <div className="flex-container">
+                <div className="landmarkNameAndLinkContainer">
                  <div className="landmarkName">{landmark}</div>
-                </td>
+                </div>
                {/* <td className="flex-item-right">{listPerspectives}</td> */}
-               <td>
+               <div>
                <ul>
                 {listPerspectives.map(perspective =>
                 // <li><p className="landmarkName" onMouseOver={updatePerspectiveSelectedByHovering(perspective)} className={ props.selectedPerspective === perspective ? "selected" : "notSelected"}>{perspective}</p></li>
@@ -44,9 +44,9 @@ const MapView = (props) => {
 
                 )}
             </ul> 
-               </td>
-              </tr> 
-            </table>
+               </div>
+              </div> 
+            
           </div>
         )
       }
