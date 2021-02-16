@@ -9,19 +9,23 @@ h2{
     display: flex;
 }
 
-.flexbox-left {
-    flex: 1;    
-    height: 1000px;
-    width: auto;
-    flex-direction: row;
-    font-family: 'Caveat', cursive;
-    font-family: 'Rancho', cursive;
-    justify-content: center;
-}   
+@media screen and (min-width: 600px) {
+    .flexbox-left {
+        flex: 1;    
+        height: 1000px;
+        width: auto;
+        flex-direction: row;
+        font-family: 'Caveat', cursive;
+        font-family: 'Rancho', cursive;
+        justify-content: center;
+    } 
+  }
+
+  
 
 .flexbox-right{
     flex: 4;
-    height: 1000px;
+    height: auto;
     width: auto;
     flex-direction: row;
     font-family: 'Caveat', cursive;
@@ -47,4 +51,5 @@ h2{
     display: flex;
     width: 30%;
     justify-content: center;
+    align-items: center;
 }
