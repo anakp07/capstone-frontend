@@ -19,7 +19,7 @@ const ListPerspectiveView = (props) => {
         if (photo.landmark === props.selectedLandmark.landmark && !newPerspectives[photo.perspective]){
           newPerspectives[photo.perspective] = []
         }
-        if (photo.landmark === props.selectedLandmark.landmark && newPerspectives[photo.perspective].length < 5){
+        if (photo.landmark === props.selectedLandmark.landmark && newPerspectives[photo.perspective].length < 3){
         newPerspectives[photo.perspective].push(<img key = {photo.photo_id} src = {photo.photo_url} alt={photo.perspective} />)
         }
       }) 
@@ -49,19 +49,15 @@ const ListPerspectiveView = (props) => {
       const listImages = perspectives[perspective]
       rows.push(
         <div key = {perspective}>
-          <table>
-            <tr class="flex-container">
-             <td className="perspectiveNameandLinkContainer">
-               <div className="perspectiveName">
-                {perspective}
-                </div>
-                <div onClick={() => updateSelectedPerspective(perspective)}>
-                  <Link to="/mapview" className="link" > Click to see it on the map!</Link>
-                </div> 
-              </td> 
-             <td className="flex-item-right">{listImages}</td>
-            </tr>
-          </table>
+        
+            <div className="flex-container">
+             <div className="perspectiveNameAndLinkContainer">
+               <div className="perspectiveName">{perspective}</div>
+                <div onClick={() => updateSelectedPerspective(perspective)}><Link to="/mapview" className="link" > Click to see it on the map!</Link></div> 
+              </div> 
+             <div className="flex-item-right">{listImages}</div>
+            </div>
+         
         </div>
       )
     }
